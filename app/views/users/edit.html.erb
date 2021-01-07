@@ -1,0 +1,12 @@
+<h2>プロフィール編集</h2>
+<%= form_with model:@user, local:true do |f| %>
+  <div class="field">
+    <%= f.label :name, "ニックネーム" %><br />
+    <%= f.text_field :name, autofocus: true, placeholder: "名前" %>
+  </div>
+  <div class="field">
+    <%= f.label :intoroduction, "自己紹介" %><br />
+    <%= f.text_area :intoroduction %>
+  </div>
+  <%= f.submit "変更を保存" %>
+<% end %>
