@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_01_07_142208) do
     t.datetime "remember_created_at"
     t.string "name"
     t.string "image_id"
-    t.text "intoroduction"
+    t.text "introduction"
     t.boolean "is_active", default: false
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
