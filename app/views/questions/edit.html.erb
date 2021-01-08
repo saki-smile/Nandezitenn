@@ -1,2 +1,41 @@
-<h1>Questions#edit</h1>
-<p>Find me in app/views/questions/edit.html.erb</p>
+<h1><ruby>投稿編集<rt>とうこうへんしゅう</rt></ruby></h1>
+<% if @question.errors.any? %>
+  <%= @question.errors.count %>件のエラーが発生しました<br>
+  <% @question.errors.full_messages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
+<%= form_with model: @question, local:true do |f| %>
+  <div class="question-field">
+    <h4><%= f.label :title, "タイトル" %></h4>
+    <%= f.text_field :title %>
+  </div>
+  <div class="question-field">
+    <%= f.attachment_field :image %>
+  </div>
+  <div class="question-field">
+    <%= f.label :observation do %>
+      <ruby>気<rt>き</rt></ruby>づいたこと
+    <% end %><br>
+    <%= f.text_area :observation %>
+  </div>
+  <div class="question-field">
+    <%= f.label :impression do %>
+      <ruby>思<rt>おも</rt></ruby>ったこと
+    <% end %><br>
+    <%= f.text_area :impression %>
+  </div>
+  <div class="question-field">
+    <%= f.label :realization do %>
+      わかったこと
+    <% end %><br>
+    <%= f.text_area :realization %>
+  </div>
+  <div class="question-field">
+    <%= f.label :uncertainty do %>
+      まだわからないこと
+    <% end %><br>
+    <%= f.text_area :uncertainty %>
+  </div>
+  <%= f.submit 'とうこう！' %>
+<% end %>

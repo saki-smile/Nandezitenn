@@ -1,14 +1,26 @@
 <div class="question">
-  <%= question.title %>
-  <%= question.user.name %>
-  <%= question.created_at %>
-  <%= attachment_image_tag question, :image, size: '120x100' %>
-  <ruby>気<rt>き</rt></ruby>づいたこと
-  <%= question.observation %>
-  <ruby>思<rt>おも</rt></ruby>ったこと
-  <%= question.impression %>
-  わかったこと
-  <%= question.realization %>
-  まだわからないこと
-  <%= question.uncertainty %>
+  <h1 class="question-show-header"><%= @question.title %></h2>
+  <p class="question-show-username"><%= @question.user.name %></p>
+  <p class="question-show-date"><%= @question.created_at.strftime('%Y/%m/%d') %></p>
+  <div class="question-show-image"><%= attachment_image_tag @question, :image, size: '120x100' %></div>
+  <div class="question-show-observation">
+    <h2><ruby>気<rt>き</rt></ruby>づいたこと</h2>
+    </p><%= @question.observation %></p>
+  </div>
+  <div class="question-show-impression">
+    <h2><ruby>思<rt>おも</rt></ruby>ったこと</h2>
+    <p><%= @question.impression %></p>
+  </div>
+  <div class="question-show-realization">
+    <h2>わかったこと</h2>
+    <p><%= @question.realization %></p>
+  </div>
+  <div class="question-show-uncertainty">
+    <h2>まだわからないこと</h2>
+    <p><%= @question.uncertainty %></p>
+  </div>
+  <% if @question.user == current_user %>
+    <%= link_to "編集", edit_question_path(@question)%>
+    <%= link_to "削除", question_path(@question), method: :delete, data: {confirm: "削除しますか？"} %>
+  <% end %>
 </div>

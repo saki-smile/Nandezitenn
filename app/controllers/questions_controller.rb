@@ -6,8 +6,12 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     @question.user_id = current_user.id
-    @question.save
-    redirect_to questions_path
+    if @question.save
+      flash[:notice] = "なんで記事を投稿しました"
+      redirect_to question_path(@question)
+    else
+      render :new
+    end
   end
 
   def index
@@ -15,15 +19,27 @@ class QuestionsController < ApplicationController
   end
 
   def show
+    @question = Question.find(params[:id])
   end
 
   def edit
+    @question = Question.find(params[:id])
   end
 
   def update
+    @question = Question.find(params[:id])
+    if @question.update(question_params)
+      flash[:notice] = "なんで記事を編集しました"
+      redirect_to question_path(@question)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to questions_path
   end
 
   private
