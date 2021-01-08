@@ -7,3 +7,11 @@
 <% if @user.id == current_user.id %>
   <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
 <% end %>
+<div class="user-show-questions">
+  <% @questions.each do |question| %>
+  <div class="questions-title">
+    <%= link_to question.title, question_path(question) %>
+
+  </div>
+  <% end %>
+</div>
