@@ -1,3 +1,9 @@
+<% @categories.each do |category| %>
+<div>
+  <p><%= category.name %></p>
+</div>
+<% end %>
+
 <% @users.each do |user| %>
 <div>
   <%= link_to user_path(user) do %>
