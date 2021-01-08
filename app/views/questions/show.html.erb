@@ -1,0 +1,14 @@
+<div class="question">
+  <%= question.title %>
+  <%= question.user.name %>
+  <%= question.created_at %>
+  <%= attachment_image_tag question, :image, size: '120x100' %>
+  <ruby>気<rt>き</rt></ruby>づいたこと
+  <%= question.observation %>
+  <ruby>思<rt>おも</rt></ruby>ったこと
+  <%= question.impression %>
+  わかったこと
+  <%= question.realization %>
+  まだわからないこと
+  <%= question.uncertainty %>
+</div>
