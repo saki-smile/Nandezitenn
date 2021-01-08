@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    models:
+      user: "ユーザー"
+    attributes:                 ## 属性（カラム)
+      user:
+        name: "ニックネーム"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード"
+        introduction: "自己紹介"
+  helpers: # ここから下を追加する
+    submit:
+      create: 登録
+      update: 更新
+  devise:
+    sessions:
+      user:
+        signed_in: "ログインしました"
+        signed_out: "ログアウトしました"
+    registrations:
+      user:
+        signed_up: "新規登録完了！"
+        

@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      question: "なんで記事"
+    attributes:                 ## 属性（カラム)
+      question:
+        title: "タイトル"
+        observation: "気づいたこと"
+        impression: "思ったこと"
+        realization: "わかったこと"
+        uncertainty: "まだわからないこと"
+  helpers:
+    submit:
+      create: 投稿
+      update: 更新
+  errors:
+    messages:
+      not_saved: ""
