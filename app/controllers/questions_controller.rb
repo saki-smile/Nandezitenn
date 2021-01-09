@@ -15,10 +15,12 @@ class QuestionsController < ApplicationController
   end
 
   def index
+    @categories = Category.all
     @questions = Question.all
   end
 
   def show
+    @categories = Category.all
     @question = Question.find(params[:id])
     @comment = Comment.new
     @comments = @question.comments
