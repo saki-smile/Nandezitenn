@@ -24,3 +24,8 @@
     <%= link_to "削除", question_path(@question), method: :delete, data: {confirm: "削除しますか？"} %>
   <% end %>
 </div>
+
+<%= render 'comments/index', comments: @comments %>
+<div class="new-comment">
+  <%= render 'comments/comments_form', question: @question, comment: @comment %>
+</div>
