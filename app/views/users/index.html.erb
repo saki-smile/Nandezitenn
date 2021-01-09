@@ -1,14 +1,17 @@
-<% @categories.each do |category| %>
-<div>
-  <p><%= category.name %></p>
+<div class="user-index-page">
+  <!--カテゴリー一覧-->
+  <div class="categories-index categories-user-index">
+    <%= render 'questions/categories', categories: @categories %>
+  </div>
+  <!--ユーザー一覧-->
+  <div class="users-list">
+    <% @users.each do |user| %>
+    <div>
+      <%= link_to user_path(user) do %>
+        <%= attachment_image_tag user, :image, size: '120x100' %>
+        <p>ユーザーネーム：<%= user.name %></p>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
 </div>
-<% end %>
-
-<% @users.each do |user| %>
-<div>
-  <%= link_to user_path(user) do %>
-    <%= attachment_image_tag user, :image, size: '120x100' %>
-    <p>ユーザーネーム：<%= user.name %></p>
-  <% end %>
-</div>
-<% end %>
