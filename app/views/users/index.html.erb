@@ -9,7 +9,7 @@
     <div>
       <%= link_to user_path(user) do %>
         <%= attachment_image_tag user, :image, size: '120x100' %>
-        <p>ユーザーネーム：<%= user.name %></p>
+        <p>ユーザーネーム：<%= user.name %></p> <%# if current_user.id == 0 %><%# admin権限持ちなので削除ボタンがある。 %><%# end%>
       <% end %>
     </div>
     <% end %>

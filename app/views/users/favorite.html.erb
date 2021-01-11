@@ -1,0 +1,6 @@
+<h1>お気に入り一覧</h1>
+<div class="user-favorite-questions-list">
+  <% @favorite_questions.each do |question| %>
+  　<%= link_to question.title, question_path(question) %>
+  <% end %>
+</div>

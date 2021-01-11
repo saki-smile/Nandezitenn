@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'homes#top'
   get 'about' => 'homes#about'
   resources :users, only: [:index, :show, :edit, :update]
+  get 'users/:id/favorites' => 'users#favorite', as: 'users_favorites'
   resources :questions do
     resource :favorites, only: [:create, :destroy]
     resources :comments, only: [:create, :destroy]
