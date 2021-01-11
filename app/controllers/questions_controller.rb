@@ -16,7 +16,7 @@ class QuestionsController < ApplicationController
 
   def index
     @categories = Category.all
-    @questions = Question.all
+    @questions = Question.page(params[:page]).reverse_order
   end
 
   def show

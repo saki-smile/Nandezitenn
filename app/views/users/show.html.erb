@@ -1,14 +1,7 @@
 <div class="user-show-page">
   <!--ユーザープロフィール表示-->
   <div class="user-profile">
-    <%= @user.name %>
-    <%= attachment_image_tag @user, :image, size: '140x100' %>
-    <%= @user.introduction %>
-    <% if current_user && @user.id == current_user.id %>
-      <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-    <% end %>
-  <!--お気に入り一覧-->
-  <%= link_to "お気に入りなんで事典", "/users/#{@user.id}/favorites" %>
+    <%= render 'profile', user: @user %>
   </div>
   <!--ユーザーの投稿一覧-->
   <div class="user-questions-list">
@@ -19,6 +12,9 @@
         <%= link_to question.title, question_path(question) %>
       </div>
       <% end %>
+    </div>
+    <div class="user-show-paginate paginate">
+      <%= paginate @questions %>
     </div>
   </div>
 </div>
