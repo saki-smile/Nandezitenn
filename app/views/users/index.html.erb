@@ -5,13 +5,17 @@
   </div>
   <!--ユーザー一覧-->
   <div class="users-list">
-    <% @users.each do |user| %>
-    <div>
-      <%= link_to user_path(user) do %>
-        <%= attachment_image_tag user, :image, size: '120x100' %>
-        <p>ユーザーネーム：<%= user.name %></p> <%# if current_user.id == 0 %><%# admin権限持ちなので削除ボタンがある。 %><%# end%>
+    <h1 class="user-index-head">ユーザー一覧</h1>
+    <div class="users-list-items">
+      <% @users.each do |user| %>
+        <%= link_to user_path(user) do %>
+          <%= attachment_image_tag user, :image, size: '120x100' %>
+          <p class="user-list-username">ユーザーネーム：<%= user.name %></p> <%# if current_user.id == 0 %><%# admin権限持ちなので削除ボタンがある。 %><%# end%>
+        <% end %>
       <% end %>
     </div>
-    <% end %>
+    <div class="user-index-paginate paginate">
+      <%= paginate @users %>
+    </div>
   </div>
 </div>
