@@ -1,0 +1,18 @@
+<% if user_signed_in? %>
+  <% if question.favorited_by?(current_user) %>
+    <p>
+      <%= link_to question_favorites_path(question), remote: true, method: :delete do %>
+        ♥お気に入りから外す
+      <% end %>
+    </p>
+    <% else %>
+    <p>
+      <%= link_to question_favorites_path(question), remote: true, method: :post do %>
+        ♡お気に入りに入れる
+      <% end %>
+    </p>
+  <% end %>
+  <P>お気に入り数<%= question.favorites.count %></P>
+<% else %>
+  <p>お気に入り数<%= question.favorites.count %></p>
+<% end %>

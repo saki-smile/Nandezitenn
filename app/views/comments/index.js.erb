@@ -1,3 +1,2 @@
-$(".comments-count").html("コメント数: <%= @question.comments.count %>");
-$(".commments-area").html("<%= j(render 'index', comments: @question.comments ) %>");
+$(".comment-content").html("<%= j(render 'index', comments: @question.comments ) %>");
 $("#comment_body").val("");

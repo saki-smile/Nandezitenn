@@ -34,23 +34,8 @@
       </div>
     </div>
     <!--お気に入り-->
-    <div class="favorite-content">
-
-      <% if @question.favorited_by?(current_user) %>
-        <p>
-          <%= link_to question_favorites_path(@question), method: :delete do %>
-            ♥お気に入りから外す
-          <% end %>
-        </p>
-        <% else %>
-        <p>
-          <%= link_to question_favorites_path(@question), method: :post do %>
-            ♡お気に入りに入れる
-          <% end %>
-        </p>
-      <% end %>
-      お気に入り数<%= @question.favorites.count %>
-
+    <div class="favorite-btn-<%= @question.id %>">
+      <%= render 'favorites/favorite', question: @question %>
     </div>
     <!--コメント-->
     <div class="comment-content">
