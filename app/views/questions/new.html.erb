@@ -10,6 +10,9 @@
     <%= f.text_field :title %>
   </div>
   <div class="question-field">
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+  <div class="question-field">
     <%= f.attachment_field :image %>
   </div>
   <div class="question-field">

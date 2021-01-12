@@ -18,6 +18,7 @@ ja:
       user:
         signed_in: "ログインしました"
         signed_out: "ログアウトしました"
+        already_signed_out: "ログアウトしました"
     registrations:
       user:
         signed_up: "新規登録完了！"
