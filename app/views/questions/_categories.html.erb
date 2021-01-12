@@ -1,5 +1,5 @@
 <% categories.each do |category| %>
 <div>
-  <p><%= category.name %></p>
+  <%= link_to category.name, questions_path(category_id: category.id) %>
 </div>
 <% end %>
