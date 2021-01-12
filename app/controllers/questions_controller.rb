@@ -1,8 +1,8 @@
 class QuestionsController < ApplicationController
-  
+
   before_action :set_categories, only: [:index, :show]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
-  
+
   def new
     @question = Question.new
   end
@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
     @questions = Question.page(params[:page]).reverse_order
     if params[:category_id].present?
       @category = Category.find(params[:category_id])
-      @@questions = @category.questions.page(params[:page])
+      @questions = @category.questions.page(params[:page]).reverse_order
     end
   end
 
@@ -53,11 +53,11 @@ class QuestionsController < ApplicationController
   def question_params
     params.require(:question).permit(:title, :category_id, :image, :observation, :impression, :realization, :uncertainty)
   end
-  
+
   def set_categories
     @categories = Category.all
   end
-  
+
   def set_question
     @question = Question.find(params[:id])
   end
