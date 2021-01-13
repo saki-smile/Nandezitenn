@@ -1,2 +1,11 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class="homes-top-page">
+  <h1>なんで事典トップ</h1>
+  <div class="ranking-content">
+    <h1 class="ranking-head">ランキング</h1>
+    <% @question_ranks.each.with_index(1) do |question, i| %>
+    　<p><%= i %>位</p>
+      <p><%= link_to question.title, question_path(question) %></p>
+    <% end %>
+  </div>
+</div>
+
