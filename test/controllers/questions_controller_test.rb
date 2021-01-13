@@ -20,5 +20,4 @@ class QuestionsControllerTest < ActionDispatch::IntegrationTest
     get questions_edit_url
     assert_response :success
   end
-
 end

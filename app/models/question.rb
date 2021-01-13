@@ -1,5 +1,4 @@
 class Question < ApplicationRecord
-
   belongs_to :user
   belongs_to :category
   has_many :comments, dependent: :destroy
@@ -7,9 +6,8 @@ class Question < ApplicationRecord
   attachment :image
 
   validates :title, presence: true
-  
+
   def favorited_by?(user)
     favorites.where(user_id: user.id).exists?
   end
-
 end

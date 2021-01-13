@@ -2,7 +2,7 @@
   <h1>なんで事典トップ</h1>
   <div class="ranking-content">
     <h1 class="ranking-head">ランキング</h1>
-    <% @question_ranks.each.with_index(1) do |question, i| %>
+    <% @rank.each.with_index(1) do |question, i| %>
     　<p><%= i %>位</p>
       <p><%= link_to question.title, question_path(question) %></p>
     <% end %>
