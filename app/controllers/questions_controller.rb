@@ -2,7 +2,11 @@ class QuestionsController < ApplicationController
 
   before_action :set_categories, only: [:index, :show]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
-
+  
+  
+  def search
+  end
+  
   def new
     @question = Question.new
   end
@@ -42,12 +46,12 @@ class QuestionsController < ApplicationController
       render :edit
     end
   end
-
+  
   def destroy
     @question.destroy
     redirect_to questions_path
   end
-
+  
   private
 
   def question_params
