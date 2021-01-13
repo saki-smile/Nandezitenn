@@ -1,4 +1,4 @@
 検索結果表示
-<% @search_questions.each do |s_uestion| %>
-  <%= link_to s_question.title, question_path(s_question) %>
+<% @search_questions.each do |s_question| %>
+  <P><%= link_to s_question.title, question_path(s_question) %></P>
 <% end %>
