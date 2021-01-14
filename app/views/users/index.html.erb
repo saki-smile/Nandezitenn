@@ -11,7 +11,7 @@
         <!--管理者は一覧に表示されないようにする-->
         <% unless user.admin? %>
           <!--管理者は退会済み会員も見れる-->
-          <% if current_user.admin? %>
+          <% if current_user && current_user.admin? %>
             <%= link_to user_path(user) do %>
               <%= attachment_image_tag user, :image, size: '120x100' %>
               <p class="user-list-username">ユーザーネーム：<%= user.name %></p> <%# if current_user.id == 0 %><%# admin権限持ちなので削除ボタンがある。 %><%# end%>
@@ -28,7 +28,7 @@
           　<% if user.is_active == false %>
               <%= link_to user_path(user) do %>
                 <%= attachment_image_tag user, :image, size: '120x100' %>
-                <p class="user-list-username">ユーザーネーム：<%= user.name %></p> 
+                <p class="user-list-username">ユーザーネーム：<%= user.name %></p>
               <% end %>
             <% end %>
           <% end %>
