@@ -20,7 +20,7 @@
         ようこそ<%= current_user.name %>さん
         <div class="search-form">
           <%= search_form_for @search, url: search_path do |f| %>
-            <%= f.search_field :title_or_observation_or_impression_or_realization_or_uncertainty_cont %>
+            <%= f.search_field :title_or_observation_or_impression_or_realization_or_uncertaintycont %>
             <%= f.submit "検索!" %>
           <% end %>
         </div>
