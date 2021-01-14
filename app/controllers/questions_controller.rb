@@ -34,6 +34,11 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    if @question.user == current_user  || current_user.admin?
+      render :edit
+    else
+      redirect_to questions_path
+    end
   end
 
   def update

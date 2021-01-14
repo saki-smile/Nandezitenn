@@ -15,6 +15,11 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if @user == current_user || current_user.admin?
+      render :edit
+    else
+      redirect_to users_path
+    end
   end
 
   def update
@@ -25,7 +30,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :introduction, :image)
+    params.require(:user).permit(:name, :introduction, :image, :is_active)
   end
 
   def set_user
