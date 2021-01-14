@@ -8,9 +8,30 @@
     <h1 class="user-index-head">ユーザー一覧</h1>
     <div class="users-list-items">
       <% @users.each do |user| %>
-        <%= link_to user_path(user) do %>
-          <%= attachment_image_tag user, :image, size: '120x100' %>
-          <p class="user-list-username">ユーザーネーム：<%= user.name %></p> <%# if current_user.id == 0 %><%# admin権限持ちなので削除ボタンがある。 %><%# end%>
+        <!--管理者は一覧に表示されないようにする-->
+        <% unless user.admin? %>
+          <!--管理者は退会済み会員も見れる-->
+          <% if current_user.admin? %>
+            <%= link_to user_path(user) do %>
+              <%= attachment_image_tag user, :image, size: '120x100' %>
+              <p class="user-list-username">ユーザーネーム：<%= user.name %></p> <%# if current_user.id == 0 %><%# admin権限持ちなので削除ボタンがある。 %><%# end%>
+            <% end %>
+            <div class="user-status">
+              <% if user.is_active == true %>
+                <p>退会済み</p>
+              <% else %>
+               <p>有効</p>
+              <% end %>
+            </div>
+          <% else %>
+            <!--会員は、有効会員のみ見れる-->
+          　<% if user.is_active == false %>
+              <%= link_to user_path(user) do %>
+                <%= attachment_image_tag user, :image, size: '120x100' %>
+                <p class="user-list-username">ユーザーネーム：<%= user.name %></p> 
+              <% end %>
+            <% end %>
+          <% end %>
         <% end %>
       <% end %>
     </div>

@@ -1,7 +1,7 @@
 <p><%= user.name %></p>
 <%= attachment_image_tag user, :image, size: '140x100' %>
 <p><%= user.introduction %></p>
-<% if current_user && user.id == current_user.id %>
+<% if (current_user && user.id == current_user.id) || current_user.admin? %>
   <p><%= link_to "プロフィール編集", edit_user_path(user) %></p>
 <% end %>
 <!--お気に入り一覧-->
