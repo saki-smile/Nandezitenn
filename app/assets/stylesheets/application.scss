@@ -28,7 +28,7 @@
 header {
   width: 100%; /* 横幅 */
   background-color: #2E4159;
-  padding: 0 15px 10px;
+  padding: 15px 20px 10px;
   // text-align: center;
   position: relative;
 }
@@ -38,10 +38,11 @@ ul {
 }
 
 li {
+  margin-left: 10px;
 }
 
 li:hover {
-  width: 180px;
+  width: 120px;
 }
 
 .nav-contents {
