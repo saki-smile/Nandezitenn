@@ -1,43 +1,77 @@
 <header>
-  <nav>
-    <ul>
+  <nav class="nav-contents">
+    <div class="header-logo">
+      <%= link_to root_path do %>
+        <%= image_tag "nande_logo_dark.jpg", alt: "Nande icon", class: "header-logo", size: '180x85' %>
+      <% end %>
+    </div>
+    <ul class="nav-list">
       <% if user_signed_in? %>
         <li>
-          <%= link_to 'マイページ', user_path(current_user.id) %>
-        </li>
-        <li>
-          <%= link_to 'ユーザ一覧', users_path %>
-        </li>
-        <li>
-          <%= link_to '記事一覧', questions_path %>
-        </li>
-        <li>
-          <%= link_to '新規投稿', new_question_path %>
-        </li>
-        <li>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-        ようこそ<%= current_user.name %>さん
-        <div class="search-form">
-          <%= search_form_for @search, url: search_path do |f| %>
-            <%= f.search_field :title_or_observation_or_impression_or_realization_or_uncertaintycont %>
-            <%= f.submit "検索!" %>
+          <%= link_to user_path(current_user.id) do %>
+            <%= image_tag "nav-mypage.png", alt: "mypage", width: "110px" %>
           <% end %>
-        </div>
+        </li>
+        <li>
+          <%= link_to users_path do %>
+            <%= image_tag "nav-users.png", alt: "users", width: "110px" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to questions_path do %>
+            <%= image_tag "nav-questions.png", alt: "questions", width: "110px" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_question_path do %>
+            <%= image_tag "nav-new-post.png", alt: "new-post", width: "110px" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <%= image_tag "nav-logout.png", alt: "logout",width: "110px" %>
+          <% end %>
+        </li>
       <% else %>
         <li>
-          <%= link_to 'ユーザ一覧', users_path %>
+          <%= link_to about_path do %>
+            <%= image_tag "nav-about.png", alt: "about", width: "110px" %>
+          <% end %>
         </li>
         <li>
-          <%= link_to '記事一覧', questions_path %>
+          <%= link_to users_path do %>
+            <%= image_tag "nav-users.png", alt: "users", width: "110px" %>
+          <% end %>
         </li>
         <li>
-          <%= link_to "新規登録", new_user_registration_path %>
+          <%= link_to questions_path do %>
+            <%= image_tag "nav-questions.png", alt: "questions", width: "110px" %>
+          <% end %>
         </li>
         <li>
-          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to new_user_registration_path do %>
+            <%= image_tag "nav-signup.png", alt: "sign up", width: "110px" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_user_session_path do %>
+            <%= image_tag "nav-login.png", alt: "login", width: "110px" %>
+          <% end %>
         </li>
       <% end %>
     </ul>
   </nav>
+  <div class="header-username">
+    <% if user_signed_in? %>
+      ようこそ、<%= current_user.name %>さん<i class="far fa-smile"></i>
+    <% end %>
+  </div>
+  <div class="search-form">
+    <%= search_form_for @search, url: search_path do |f| %>
+      <%= f.search_field :title_or_observation_or_impression_or_realization_or_uncertainty_cont, size: "25", placeholder: "キーワード検索", class: "search_field" %>
+      <%#= f.submit class: "search_btn" %>
+      <button type="submit" class="search_btn"><i class="fas fa-search"></i></button>
+    <% end %>
+  </div>
+
 </header>
