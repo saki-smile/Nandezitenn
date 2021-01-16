@@ -27,7 +27,7 @@ $(document).ready(function () {
   $("#theTarget").bxSlider({
     // スライドショーの自動再生(falseで自動再生なし)
     auto: true,
-    slideWidth: 1000,
+    slideWidth: 800,
     nextText: ">",
     prevText: "<",
     // minSlides: 3,
