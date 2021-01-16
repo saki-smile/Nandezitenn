@@ -3,11 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // 新規登録ページ
-.signUp-page {
+.devise-page {
   padding: 50px;
   color: #2E4159;
 }
-.signUp-contents {
+.devise-contents {
   background-color: #fff;
   border-radius: 10px;
   width: 600px;
@@ -19,38 +19,39 @@
 .e-messages{
   color: red;
 }
-.signUp-head {
+.devise-head {
   font-size: 24px;
   border-bottom: 1px solid rgba(115,50,68,0.9);
   margin-bottom: 10px;
 }
-.signUp-table {
+.devise-table {
   width: 100%;
 }
-.signUp-table tr {
+.devise-table tr {
   line-height: 50px;
 }
-.signUp-table th {
+.devise-table th {
   width: 50%;
 }
-.signUp-table p {
+.devise-table p {
+  font-size: 16px;
   text-align: left;
 }
-.signUp-field {
+.devise-field {
   width: 90%;
   height: 30px;
 }
-.signUp-field:hover {
+.devise-field:hover {
   background-color: rgba( 0, 0, 0, 0.1);
 }
 
-.signUp-actions {
+.actions {
   width: 500px;
   height: 40px;
   margin: 0 auto;
   padding: 10px 0;
 }
-.signUp-btn {
+.btn {
   cursor: pointer;
   background-color: rgba(115,50,68,0.9);
   width: 500px;
@@ -60,6 +61,6 @@
   color: #fff;
   font-size: 15px;
 }
-.signUp-btn:hover {
+.btn:hover {
   background-color: rgba(115,50,68,0.7);
 }
