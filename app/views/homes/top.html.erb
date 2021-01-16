@@ -1,5 +1,14 @@
 <div class="homes-top-page">
-  <h1>なんで事典トップ</h1>
+  <div id="container">
+    <ul id="theTarget">
+      <li class="image1"><%= image_tag "image1.jpg" %></li>
+      <li class="image2"><%= image_tag "image2.jpg" %></li>
+      <!--<li class="image3"><%#= image_tag "test3.jpg" %></li>-->
+      <!--<li class="image4"><%#= image_tag "test4.jpg" %></li>-->
+      <!--<li class="image5"><%#= image_tag "test5.jpg" %></li>-->
+    </ul>
+  </div>
+  <h1 class="homes-top-head">なんで事典トップ</h1>
   <div class="ranking-content">
     <h1 class="ranking-head">ランキング</h1>
     <% @rank.each.with_index(1) do |question, i| %>
