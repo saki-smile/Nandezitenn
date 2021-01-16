@@ -17,11 +17,11 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(document).ready(function () {
-  $('.homes-top-head').on('click', function(){
-    $(this).css('color','red');
-  });
-});
+// $(document).ready(function () {
+//   $('.homes-top-head').on('click', function(){
+//     $(this).css('color','red');
+//   });
+// });
 
 $(document).ready(function () {
   $("#theTarget").bxSlider({
