@@ -9,53 +9,53 @@
       <% if user_signed_in? %>
         <li>
           <%= link_to user_path(current_user.id) do %>
-            <%= image_tag "nav-mypage.png", alt: "mypage", width: "110px" %>
+            <%= image_tag "nav-mypage.png", alt: "mypage", width: "100px" %>
           <% end %>
         </li>
         <li>
           <%= link_to users_path do %>
-            <%= image_tag "nav-users.png", alt: "users", width: "110px" %>
+            <%= image_tag "nav-users.png", alt: "users", width: "100px" %>
           <% end %>
         </li>
         <li>
           <%= link_to questions_path do %>
-            <%= image_tag "nav-questions.png", alt: "questions", width: "110px" %>
+            <%= image_tag "nav-questions.png", alt: "questions", width: "100px" %>
           <% end %>
         </li>
         <li>
           <%= link_to new_question_path do %>
-            <%= image_tag "nav-new-post.png", alt: "new-post", width: "110px" %>
+            <%= image_tag "nav-new-post.png", alt: "new-post", width: "100px" %>
           <% end %>
         </li>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
-            <%= image_tag "nav-logout.png", alt: "logout",width: "110px" %>
+            <%= image_tag "nav-logout.png", alt: "logout",width: "100px" %>
           <% end %>
         </li>
       <% else %>
         <li>
           <%= link_to about_path do %>
-            <%= image_tag "nav-about.png", alt: "about", width: "110px" %>
+            <%= image_tag "nav-about.png", alt: "about", width: "100px" %>
           <% end %>
         </li>
         <li>
           <%= link_to users_path do %>
-            <%= image_tag "nav-users.png", alt: "users", width: "110px" %>
+            <%= image_tag "nav-users.png", alt: "users", width: "100px" %>
           <% end %>
         </li>
         <li>
           <%= link_to questions_path do %>
-            <%= image_tag "nav-questions.png", alt: "questions", width: "110px" %>
+            <%= image_tag "nav-questions.png", alt: "questions", width: "100px" %>
           <% end %>
         </li>
         <li>
           <%= link_to new_user_registration_path do %>
-            <%= image_tag "nav-signup.png", alt: "sign up", width: "110px" %>
+            <%= image_tag "nav-signup.png", alt: "sign up", width: "100px" %>
           <% end %>
         </li>
         <li>
           <%= link_to new_user_session_path do %>
-            <%= image_tag "nav-login.png", alt: "login", width: "110px" %>
+            <%= image_tag "nav-login.png", alt: "login", width: "100px" %>
           <% end %>
         </li>
       <% end %>

@@ -16,3 +16,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready(function () {
+  $('.homes-top-head').on('click', function(){
+    $(this).css('color','red');
+  });
+});
+
+$(document).ready(function () {
+  $("#theTarget").bxSlider({
+    // スライドショーの自動再生(falseで自動再生なし)
+    auto: true,
+    slideWidth: 1000,
+    nextText: ">",
+    prevText: "<",
+    // minSlides: 3,
+    // maxSlides: 3,
+    moveSlides: 1
+  });
+});
