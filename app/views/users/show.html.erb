@@ -1,20 +1,27 @@
-<div class="user-show-page">
-  <!--ユーザープロフィール表示-->
-  <div class="user-profile">
-    <%= render 'profile', user: @user %>
-  </div>
-  <!--ユーザーの投稿一覧-->
-  <div class="user-questions-list">
-    <h3 class="user-questions-list-head"><%= @user.name %> のなんで事典</h3>
-    <div class="questions-item">
-      <% @questions.each do |question| %>
-      <div class="questions-title">
-        <%= link_to question.title, question_path(question) %>
-      </div>
-      <% end %>
+<div class="user-page">
+  <div class="user-contents">
+    <!--ユーザープロフィール表示-->
+    <div class="user-profile">
+      <%= render 'profile', user: @user %>
     </div>
-    <div class="user-show-paginate paginate">
-      <%= paginate @questions %>
+    <!--ユーザーの投稿一覧-->
+    <div class="questions-list">
+      <h3 class="questions-list-head"><%= @user.name %> のなんで事典</h3>
+      <div class="questions-item">
+        <% @questions.each do |question| %>
+        <div class="question-titles">
+          <p class="question-titles-category"><%= question.category.name %></p>
+          <h2><%= link_to question.title, question_path(question), class: "question-title-name" %></h2>
+          <p class="question-titles-p">
+            <%= link_to question.user.name, user_path(question.user), class: "p-username" %>
+          </p>
+          <p class="question-titles-p"><%= question.created_at.strftime('%Y/%m/%d') %></p>
+        </div>
+        <% end %>
+      </div>
+      <div class="user-show-paginate paginate">
+        <%= paginate @questions %>
+      </div>
     </div>
   </div>
 </div>

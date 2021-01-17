@@ -64,3 +64,51 @@
 .btn:hover {
   background-color: rgba(115,50,68,0.7);
 }
+
+// ユーザー一覧ページ
+.user-page {
+  padding: 50px 0;
+  min-height: 600px;
+  color: #2E4159;
+}
+.user-contents {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+.users-list {
+  width: 70%;
+  background-color: #fff;
+  padding: 20px 60px;
+  box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
+}
+.users-list-content{
+  background-color: gray;
+}
+.user-list-item {
+  background-color: #fff;
+  margin: 10px 0;
+}
+.user-list-link {
+  text-decoration: none;
+  color: #2E4159;
+  font-size: 20px;
+}
+.user-list-img {
+  border-radius: 50%;
+  border: 10px;
+}
+.user-list-username {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+// ユーザー詳細ページ
+.user-profile {
+  width: 25%;
+  margin-right: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
+  // border-left: 10px solid rgba(115,50,68,0.3);
+}

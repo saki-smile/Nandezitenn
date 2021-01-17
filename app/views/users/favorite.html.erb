@@ -1,18 +1,27 @@
-<div class="user-favorite-page">
-  <!--ユーザープロフィール表示-->
-  <div class="user-profile">
-    <%= render 'profile', user: @user %>
-  </div>
-  <!--お気に入り一覧-->
-  <div class="user-favorite-list">
-    <h1 class="user-favorite-head">お気に入り一覧</h1>
-    <div class="user-favorite-questions-list">
-      <% @favorite_questions.each do |question| %>
-      　<%= link_to question.title, question_path(question), class: "user-favorite-questions-title" %>
-      <% end %>
+<div class="user-page">
+  <div class="user-contents">
+    <!--ユーザープロフィール表示-->
+    <div class="user-profile">
+      <%= render 'profile', user: @user %>
     </div>
-    <div class="user-favorite-paginate paginate">
-      <%= paginate @favorite_questions %>
+    <!--お気に入り一覧-->
+    <div class="questions-list">
+      <h1 class="questions-list-head"><%= @user.name %> のお気に入りなんで事典</h1>
+      <div class="questions-item">
+        <% @favorite_questions.each do |question| %>
+          <div class="question-titles">
+            <p class="question-titles-category"><%= question.category.name %></p>
+            <h2><%= link_to question.title, question_path(question), class: "question-title-name" %></h2>
+            <p class="question-titles-p">
+              <%= link_to question.user.name, user_path(question.user), class: "p-username" %>
+            </p>
+            <p class="question-titles-p"><%= question.created_at.strftime('%Y/%m/%d') %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="user-favorite-paginate paginate">
+        <%= paginate @favorite_questions %>
+      </div>
     </div>
   </div>
 </div>
