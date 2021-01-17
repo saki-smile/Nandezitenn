@@ -23,9 +23,51 @@
 }
 .questions-list {
   width: 70%;
-  background-color: #fefefe;
+  background-color: #fff;
+  padding: 20px 60px;
+  box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
 }
-
+.questions-list-head{
+  font-size: 24px;
+  border-bottom: 1px solid rgba(115,50,68,0.9);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.questions-item{
+  padding: 0 40px;
+}
+.question-titles{
+  // background-color: gray;
+  border-left: 7px solid rgba(46,65,89,0.8);
+  padding-left: 5px;
+  margin-bottom: 20px;
+}
+.question-titles:hover{
+  background-color: rgba( 46,65,89, 0.1);
+}
+.question-title-name{
+  color: rgb(46,65,89);
+  text-decoration: none;
+  font-size: 22px;
+}
+.question-title-name:hover{
+  color: rgba( 46,65,89, 0.5);
+}
+.question-titles-category{
+  font-size: 12px;
+  display: inline-block;
+  background-color: rgba(46,65,89,0.5);
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px;
+}
+.question-titles-p{
+  display: inline-block;
+}
+.p-username{
+  color: #2E4159;
+  text-decoration: none;
+}
 // カテゴリー
 .category-head{
   font-size: 20px;
