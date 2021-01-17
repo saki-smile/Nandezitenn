@@ -1,20 +1,27 @@
-<div class="question-index-page">
-  <!--カテゴリー一覧-->
-  <div class="categories-index categories-question-index">
-    <%= render 'questions/categories', categories: @categories %>
-  </div>
-  <!--記事一覧-->
-  <div class="questions-list">
-    <h1 class="questions-list-head">なんで<ruby>記事<rt>きじ</rt>一覧<rt>いちらん</rt></ruby></h1>
-    <div class="questions-item">
-      <% @questions.each do |question| %>
-      <div class="questions-title">
-        <%= link_to question.title, question_path(question) %>
-      </div>
-      <% end %>
+<div class="question-page">
+  <div class="question-contents">
+    <!--カテゴリー一覧-->
+    <div class="categories-index categories-question-index">
+      <%= render 'questions/categories', categories: @categories %>
     </div>
-    <div class="question-index-paginate paginate">
-      <%= paginate @questions %>
+    <!--記事一覧-->
+    <div class="questions-list">
+      <h1 class="questions-list-head">なんで<ruby>記事<rt>きじ</rt>一覧<rt>いちらん</rt></ruby></h1>
+      <div class="questions-item">
+        <% @questions.each do |question| %>
+        <div class="question-titles">
+          <p class="question-titles-category"><%= question.category.name %></p>
+          <h2><%= link_to question.title, question_path(question), class: "question-title-name" %></h2>
+          <p class="question-titles-p">
+            <%= link_to question.user.name, user_path(question.user), class: "p-username" %>
+          </p>
+          <p class="question-titles-p"><%= question.created_at.strftime('%Y/%m/%d') %></p>
+        </div>
+        <% end %>
+      </div>
+      <div class="question-index-paginate paginate">
+        <%= paginate @questions %>
+      </div>
     </div>
   </div>
 </div>

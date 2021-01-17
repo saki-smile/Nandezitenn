@@ -1,3 +1,158 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 投稿一覧、詳細
+.question-page {
+  padding: 50px 0;
+  color: #2E4159;
+}
+.question-contents {
+  display: flex;
+  width: 80%;
+  // background-color: #dfdffd;
+  margin: 0 auto;
+}
+.categories-index {
+  width: 25%;
+  margin-right: 50px;
+  background-color: #fff;
+  padding: 10px;
+  border-left: 10px solid rgba(115,50,68,0.3);
+  // background-color: #adadaa;
+}
+.questions-list {
+  width: 70%;
+  background-color: #fff;
+  padding: 20px 60px;
+  box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
+}
+.questions-list-head{
+  font-size: 24px;
+  border-bottom: 1px solid rgba(115,50,68,0.9);
+  margin-bottom: 10px;
+  text-align: center;
+}
+.questions-item{
+  padding: 0 40px;
+}
+.question-titles{
+  border-left: 7px solid rgba(46,65,89,0.8);
+  padding-left: 5px;
+  margin-bottom: 20px;
+}
+.question-titles:hover{
+  background-color: rgba( 46,65,89, 0.1);
+}
+.question-title-name{
+  color: rgb(46,65,89);
+  text-decoration: none;
+  font-size: 22px;
+}
+.question-title-name:hover{
+  color: rgba( 46,65,89, 0.5);
+}
+.question-titles-category{
+  font-size: 12px;
+  display: inline-block;
+  background-color: rgba(46,65,89,0.5);
+  color: #fff;
+  border-radius: 3px;
+  padding: 1px;
+}
+.question-titles-p{
+  display: inline-block;
+}
+.p-username{
+  color: #2E4159;
+  text-decoration: none;
+}
+.question-show-item{
+  font-size: 18px;
+  margin-top: 10px
+}
+// カテゴリー
+.category-head{
+  font-size: 20px;
+  background-color: rgba(115,50,68,0.8);
+  color: #F2F2F2;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.category-lists-box {
+  border-bottom: 1px solid rgba(115,50,68,0.5);
+  // rgb(115,50,68);
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+.category-lists-box:hover {
+  background-color: rgba(46,65,89,0.1);
+}
+.category-lists{
+  color: rgb(46,65,89);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+// 投稿新規、編集
+
+.question-post-page{
+  padding: 50px 0;
+  color: #2E4159;
+}
+.question-post-contents{
+  width: 60%;
+  background-color: #fff;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
+}
+.question-post-head{
+  font-size: 24px;
+  border-bottom: 1px solid rgba(115,50,68,0.9);
+  margin-bottom: 10px;
+}
+.error-massage{
+  color: red;
+}
+.question-post-fields{
+  margin: 20px 40px;
+}
+#question_category_id{
+  width: 100%;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.question-title-field{
+  width: 100%;
+  height: 30px;
+}
+.question-title-field:hover{
+  background-color: rgba( 0, 0, 0, 0.1);
+}
+.question-field-p{
+  font-size: 18px;
+  margin-top: 5px;
+}
+.question-body-field{
+  width: 100%;
+  height: 120px;
+}
+.question-body-field:hover {
+  background-color: rgba( 0, 0, 0, 0.1);
+}
+.question-post-btn{
+  cursor: pointer;
+  background-color: rgba(115,50,68,0.9);
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 20px;
+  height: 40px;
+  color: #fff;
+  font-size: 15px;
+}
+.question-post-btn:hover {
+  background-color: rgba(115,50,68,0.7);
+}

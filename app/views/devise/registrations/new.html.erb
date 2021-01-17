@@ -7,16 +7,16 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       <table class="devise-table">
         <tr>
-          <th><p><%= f.label :name %></p></th>
+          <th><p class="signup-p"><%= f.label :name %></p></th>
           <th><%= f.text_field :name, autofocus: true, class: "devise-field" %></th>
         </tr>
         <tr>
-          <th><p><%= f.label :email %></p></th>
+          <th><p class="signup-p"><%= f.label :email %></p></th>
           <th><%= f.email_field :email, autofocus: true, autocomplete: "email", class: "devise-field" %></th>
         </tr>
         <tr>
           <th>
-            <p>
+            <p class="signup-p">
               <%= f.label :password %>
               <% if @minimum_password_length %>
               （ <%= @minimum_password_length %> <ruby>文字<rt>もじ</rt>以上<rt>いじょう</rt></ruby> )
@@ -27,7 +27,7 @@
         </tr>
         <tr>
           <th>
-            <p>
+            <p class="signup-p">
               <%= f.label :password_confirmation %>
               （ <ruby>確認用<rt>かくにんよう</rt></ruby> ）
             </p>
@@ -37,7 +37,7 @@
       </table>
       <div class="actions">
         <button type="submit" class="btn">
-           新規登録
+          新規登録
         </button>
       </div>
     <% end %>
