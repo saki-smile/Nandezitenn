@@ -5,27 +5,29 @@
       <%= render 'questions/categories', categories: @categories %>
     </div>
     <!--なんで記事詳細-->
-    <div class="question-show-content">
+    <div class="questions-list">
       <div class="question-show">
+        <p class="question-titles-category"><%= @question.category.name %></p>
         <h1 class="question-show-header"><%= @question.title %></h2>
-        <p class="question-show-username"><%= @question.user.name %></p>
-        <p class="question-show-date"><%= @question.created_at.strftime('%Y/%m/%d') %></p>
-        <p class="question-show-categories"><%= @question.category.name %></p>
+        <p class="question-titles-p">
+          <%= link_to @question.user.name, user_path(@question.user), class: "p-username" %>
+        </p>
+        <p class="question-titles-p"><%= @question.created_at.strftime('%Y/%m/%d') %></p>
         <div class="question-show-image"><%= attachment_image_tag @question, :image, size: '120x100' %></div>
         <div class="question-show-observation">
-          <h2><ruby>気<rt>き</rt></ruby>づいたこと</h2>
+          <h2 class="question-show-item"><ruby>気<rt>き</rt></ruby>づいたこと</h2>
           </p><%= @question.observation %></p>
         </div>
         <div class="question-show-impression">
-          <h2><ruby>思<rt>おも</rt></ruby>ったこと</h2>
+          <h2 class="question-show-item"><ruby>思<rt>おも</rt></ruby>ったこと</h2>
           <p><%= @question.impression %></p>
         </div>
         <div class="question-show-realization">
-          <h2>わかったこと</h2>
+          <h2 class="question-show-item">わかったこと</h2>
           <p><%= @question.realization %></p>
         </div>
         <div class="question-show-uncertainty">
-          <h2>まだわからないこと</h2>
+          <h2 class="question-show-item">まだわからないこと</h2>
           <p><%= @question.uncertainty %></p>
         </div>
         <div class="question-show-edit-delete">

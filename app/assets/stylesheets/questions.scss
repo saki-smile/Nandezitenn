@@ -37,7 +37,6 @@
   padding: 0 40px;
 }
 .question-titles{
-  // background-color: gray;
   border-left: 7px solid rgba(46,65,89,0.8);
   padding-left: 5px;
   margin-bottom: 20px;
@@ -67,6 +66,10 @@
 .p-username{
   color: #2E4159;
   text-decoration: none;
+}
+.question-show-item{
+  font-size: 18px;
+  margin-top: 10px
 }
 // カテゴリー
 .category-head{

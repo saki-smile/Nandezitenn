@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_categories, only: [:index, :show]
+  before_action :set_categories, only: [:index, :show, :search]
   before_action :set_question, only: [:show, :edit, :update, :destroy]
 
   def search
