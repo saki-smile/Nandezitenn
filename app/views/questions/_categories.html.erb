@@ -1,5 +1,6 @@
+<h2 class="category-head">カテゴリー</h2>
 <% categories.each do |category| %>
-<div>
-  <%= link_to category.name, questions_path(category_id: category.id) %>
-</div>
+<p class="category-lists-box">
+  <%= link_to category.name, questions_path(category_id: category.id), class: "category-lists" %><br>
+</p>
 <% end %>
