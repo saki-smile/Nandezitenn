@@ -25,7 +25,6 @@
 document.addEventListener("turbolinks:load", function() {
   $(document).ready(function () {
     $("#theTarget").bxSlider({
-      // スライドショーの自動再生(falseで自動再生なし)
       auto: true,
       slideWidth: 800,
       nextText: ">",
