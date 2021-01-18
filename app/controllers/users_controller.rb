@@ -1,20 +1,28 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :favorite, :edit, :update]
+
   def show
-    @user = User.find(params[:id])
-    @questions = @user.questions
+    @questions = @user.questions.page(params[:page]).reverse_order
   end
 
   def index
     @categories = Category.all
-    @users = User.all
+    @users = User.page(params[:page]).reverse_order
+  end
+
+  def favorite
+    @favorite_questions = @user.favorite_questions.page(params[:page]).reverse_order
   end
 
   def edit
-    @user = User.find(params[:id])
+    if @user == current_user || current_user.admin?
+      render :edit
+    else
+      redirect_to users_path
+    end
   end
 
   def update
-    @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user)
   end
@@ -22,7 +30,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :introduction, :image)
+    params.require(:user).permit(:name, :introduction, :image, :is_active)
   end
 
+  def set_user
+    @user = User.find(params[:id])
+  end
 end

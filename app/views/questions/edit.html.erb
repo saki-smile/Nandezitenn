@@ -1,32 +1,46 @@
-<h1><ruby>投稿編集<rt>とうこうへんしゅう</rt></ruby></h1>
-<% if @question.errors.any? %>
-  <% @question.errors.full_messages.each do |message| %>
-    <%= message %>
-  <% end %>
-<% end %>
-<%= form_with model: @question, local:true do |f| %>
-  <div class="question-field">
-    <h4><%= f.label :title %></h4>
-    <%= f.text_field :title %>
+<div class="question-post-page">
+  <div class="question-post-contents">
+    <h1 class="question-post-head">
+      <i class="fas fa-pencil-alt"></i>
+      <ruby>投稿編集<rt>とうこうへんしゅう</rt></ruby>
+    </h1>
+    <div class="question-post-fields">
+      <% if @question.errors.any? %>
+        <% @question.errors.full_messages.each do |message| %>
+          <p class="error-massage"><%= message %></p>
+        <% end %>
+      <% end %>
+      <%= form_with model: @question, local:true do |f| %>
+        <div class="question-field">
+          <%= f.collection_select :category_id, Category.all, :id, :name %>
+        </div>
+        <div class="question-field">
+          <%= f.attachment_field :image %>
+        </div>
+        <div class="question-field">
+          <p class="question-field-p"><%= f.label :title %></p>
+          <%= f.text_field :title, class: "question-title-field" %>
+        </div>
+        <div class="question-field">
+          <p class="question-field-p"><%= f.label :observation %></p>
+          <%= f.text_area :observation, class: "question-body-field" %>
+        </div>
+        <div class="question-field">
+          <p class="question-field-p"><%= f.label :impression %></p>
+          <%= f.text_area :impression, class: "question-body-field" %>
+        </div>
+        <div class="question-field">
+          <p class="question-field-p"><%= f.label :realization %></p>
+          <%= f.text_area :realization, class: "question-body-field" %>
+        </div>
+        <div class="question-field">
+          <p class="question-field-p"><%= f.label :uncertainty %></p>
+          <%= f.text_area :uncertainty, class: "question-body-field" %>
+        </div>
+        <button type="submit" class="question-post-btn">
+          投稿編集
+        </button>
+      <% end %>
+    </div>
   </div>
-  <div class="question-field">
-    <%= f.attachment_field :image %>
-  </div>
-  <div class="question-field">
-    <%= f.label :observation %><br>
-    <%= f.text_area :observation %>
-  </div>
-  <div class="question-field">
-    <%= f.label :impression %><br>
-    <%= f.text_area :impression %>
-  </div>
-  <div class="question-field">
-    <%= f.label :realization %><br>
-    <%= f.text_area :realization %>
-  </div>
-  <div class="question-field">
-    <%= f.label :uncertainty %><br>
-    <%= f.text_area :uncertainty %>
-  </div>
-  <%= f.submit %>
-<% end %>
+</div>

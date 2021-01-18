@@ -1,15 +1,21 @@
 class FavoritesController < ApplicationController
+  before_action :set_question, only: [:create, :destroy]
+
   def create
-    question = Question.find(params[:question_id])
-    favorite = current_user.favorites.build(question_id: question.id)
+    favorite = current_user.favorites.build(question_id: @question.id)
     favorite.save
-    redirect_to question_path(question)
+    render :index
   end
- 
+
   def destroy
-    question = Question.find(params[:question_id])
-    favorite = current_user.favorites.find_by(question_id: question.id)
+    favorite = current_user.favorites.find_by(question_id: @question.id)
     favorite.destroy
-    redirect_to question_path(question)
+    render :index
+  end
+
+  private
+
+  def set_question
+    @question = Question.find(params[:question_id])
   end
 end

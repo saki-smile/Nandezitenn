@@ -16,3 +16,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+// $(document).ready(function () {
+//   $('.homes-top-head').on('click', function(){
+//     $(this).css('color','red');
+//   });
+// });
+document.addEventListener("turbolinks:load", function() {
+  $(document).ready(function () {
+    $("#theTarget").bxSlider({
+      auto: true,
+      slideWidth: 800,
+      nextText: ">",
+      prevText: "<",
+      // minSlides: 3,
+      // maxSlides: 3,
+      moveSlides: 1
+    });
+  });
+});

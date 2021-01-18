@@ -1,17 +1,16 @@
-<div class="question-index-page">
-  <!--カテゴリー一覧-->
-  <div class="categories-index categories-question-index">
-    <%= render 'questions/categories', categories: @categories %>
-  </div>
-  <!--記事一覧-->
-  <div class="questions-list">
-    <h1 class="questions-list-head">なんで<ruby>記事<rt>きじ</rt>一覧<rt>いちらん</rt></ruby></h1>
-    <div class="questions-item">
-      <% @questions.each do |question| %>
-      <div class="questions-title">
-        <%= link_to question.title, question_path(question) %>
+<div class="question-page">
+  <div class="question-contents">
+    <!--カテゴリー一覧-->
+    <div class="categories-index categories-question-index">
+      <%= render 'questions/categories', categories: @categories %>
+    </div>
+    <!--記事一覧-->
+    <div class="questions-list">
+      <h1 class="questions-list-head">なんで<ruby>記事<rt>きじ</rt>一覧<rt>いちらん</rt></ruby></h1>
+      <%= render 'questions/question', questions: @questions %>
+      <div class="question-index-paginate paginate">
+        <%= paginate @questions %>
       </div>
-      <% end %>
     </div>
   </div>
 </div>

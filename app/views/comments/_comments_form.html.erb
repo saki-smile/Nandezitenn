@@ -1,4 +1,9 @@
-<%= form_with model:[question, comment] do |f| %>
-  <%= f.text_area :body, placeholder: "コメントをここに" %>
-  <%= f.submit %>
+<% if user_signed_in? %>
+  <%= form_with model:[question, comment] do |f| %>
+    <%= f.text_area :body, placeholder: "コメントをここに" %>
+    <%= f.submit %>
+  <% end %>
+<% else %>
+　<p>ログインしてコメントをする</p>
+  <%= link_to "ログイン", new_user_session_path %>
 <% end %>

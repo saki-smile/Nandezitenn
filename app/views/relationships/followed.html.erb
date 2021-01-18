@@ -1,0 +1,13 @@
+<div class="users-list-items">
+  <h1 class="followed-head">フォロー一覧</h1>
+
+  <% @users.each do |user| %>
+    <%= link_to user_path(user) do %>
+    　<%= attachment_image_tag user, :image, size: '120x100' %>
+      <p class="user-list-username">ユーザーネーム：<%= user.name %></p> <%# if current_user.id == 0 %><%# admin権限持ちなので削除ボタンがある。 %><%# end%>
+    <% end %>
+    <!--<div class="follow-btn-<%#= user.id %>">-->
+    <!--  <%#= render 'users/follow', user: user %>-->
+    <!--</div>-->
+  <% end %>
+</div>

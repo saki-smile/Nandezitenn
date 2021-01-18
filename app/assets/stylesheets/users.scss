@@ -1,3 +1,113 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// 新規登録ページ
+.devise-page {
+  padding: 50px;
+  color: #2E4159;
+}
+.devise-contents {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 2px 2px 4px #2E4159;
+}
+
+#error_explanation{
+  color: red;
+}
+.devise-head {
+  font-size: 24px;
+  border-bottom: 1px solid rgba(115,50,68,0.9);
+  margin-bottom: 10px;
+}
+.devise-table {
+  width: 100%;
+}
+.devise-table tr {
+  line-height: 50px;
+}
+.devise-table th {
+  width: 50%;
+}
+.signup-p {
+  font-size: 16px;
+  text-align: left;
+}
+.devise-field {
+  width: 90%;
+  height: 30px;
+}
+.devise-field:hover {
+  background-color: rgba( 0, 0, 0, 0.1);
+}
+
+.actions {
+  width: 500px;
+  height: 40px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+.btn {
+  cursor: pointer;
+  background-color: rgba(115,50,68,0.9);
+  width: 500px;
+  margin: 0 auto;
+  border-radius: 20px;
+  height: 40px;
+  color: #fff;
+  font-size: 15px;
+}
+.btn:hover {
+  background-color: rgba(115,50,68,0.7);
+}
+
+// ユーザー一覧ページ
+.user-page {
+  padding: 50px 0;
+  min-height: 600px;
+  color: #2E4159;
+}
+.user-contents {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+}
+.users-list {
+  width: 70%;
+  background-color: #fff;
+  padding: 20px 60px;
+  box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
+}
+.users-list-content{
+  background-color: gray;
+}
+.user-list-item {
+  background-color: #fff;
+  margin: 10px 0;
+}
+.user-list-link {
+  text-decoration: none;
+  color: #2E4159;
+  font-size: 20px;
+}
+.user-list-img {
+  border-radius: 50%;
+  border: 10px;
+}
+.user-list-username {
+  display: inline-block;
+  margin: 0 40px;
+}
+
+// ユーザー詳細ページ
+.user-profile {
+  width: 25%;
+  margin-right: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
+}

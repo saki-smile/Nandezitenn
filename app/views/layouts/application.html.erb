@@ -11,7 +11,12 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%= render "layouts/notice" %>
-    <%= yield %>
+    <!--<div class="under-head">-->
+    <!--  <%#= image_tag "nande-head.png", alt: "under-head", class: "under-header", width: "100%" %>-->
+    <!--</div>-->
+    <main>
+      <%= render "layouts/notice" %>
+      <%= yield %>
+    </main>
   </body>
 </html>

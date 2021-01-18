@@ -1,0 +1,16 @@
+<div class="user-page">
+  <div class="user-contents">
+    <!--ユーザープロフィール表示-->
+    <div class="user-profile">
+      <%= render 'profile', user: @user %>
+    </div>
+    <!--お気に入り一覧-->
+    <div class="questions-list">
+      <h1 class="questions-list-head"><%= @user.name %> のお気に入りなんで事典</h1>
+      <%= render 'questions/question', questions: @favorite_questions %>
+      <div class="user-favorite-paginate paginate">
+        <%= paginate @favorite_questions %>
+      </div>
+    </div>
+  </div>
+</div>

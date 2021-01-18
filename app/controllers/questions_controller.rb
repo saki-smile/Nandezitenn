@@ -1,4 +1,10 @@
 class QuestionsController < ApplicationController
+  before_action :set_categories, only: [:index, :show, :search]
+  before_action :set_question, only: [:show, :edit, :update, :destroy]
+
+  def search
+  end
+
   def new
     @question = Question.new
   end
@@ -15,23 +21,27 @@ class QuestionsController < ApplicationController
   end
 
   def index
-    @categories = Category.all
-    @questions = Question.all
+    @questions = Question.page(params[:page]).reverse_order
+    if params[:category_id].present?
+      @category = Category.find(params[:category_id])
+      @questions = @category.questions.page(params[:page]).reverse_order
+    end
   end
 
   def show
-    @categories = Category.all
-    @question = Question.find(params[:id])
     @comment = Comment.new
     @comments = @question.comments
   end
 
   def edit
-    @question = Question.find(params[:id])
+    if @question.user == current_user  || current_user.admin?
+      render :edit
+    else
+      redirect_to questions_path
+    end
   end
 
   def update
-    @question = Question.find(params[:id])
     if @question.update(question_params)
       flash[:notice] = "なんで記事を編集しました"
       redirect_to question_path(@question)
@@ -41,7 +51,6 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
-    @question = Question.find(params[:id])
     @question.destroy
     redirect_to questions_path
   end
@@ -49,7 +58,14 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :image, :observation, :impression, :realization, :uncertainty)
+    params.require(:question).permit(:title, :category_id, :image, :observation, :impression, :realization, :uncertainty)
   end
 
+  def set_categories
+    @categories = Category.all
+  end
+
+  def set_question
+    @question = Question.find(params[:id])
+  end
 end

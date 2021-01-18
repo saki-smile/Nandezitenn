@@ -1,63 +1,53 @@
-<div class="question-show-page">
-  <!--カテゴリー一覧-->
-  <div class="categories-index categories-question-show">
-    <%= render 'questions/categories', categories: @categories %>
-  </div>
-  <!--なんで記事詳細-->
-  <div class="question-show-content">
-    <div class="question-show">
-      <h1 class="question-show-header"><%= @question.title %></h2>
-      <p class="question-show-username"><%= @question.user.name %></p>
-      <p class="question-show-date"><%= @question.created_at.strftime('%Y/%m/%d') %></p>
-      <div class="question-show-image"><%= attachment_image_tag @question, :image, size: '120x100' %></div>
-      <div class="question-show-observation">
-        <h2><ruby>気<rt>き</rt></ruby>づいたこと</h2>
-        </p><%= @question.observation %></p>
-      </div>
-      <div class="question-show-impression">
-        <h2><ruby>思<rt>おも</rt></ruby>ったこと</h2>
-        <p><%= @question.impression %></p>
-      </div>
-      <div class="question-show-realization">
-        <h2>わかったこと</h2>
-        <p><%= @question.realization %></p>
-      </div>
-      <div class="question-show-uncertainty">
-        <h2>まだわからないこと</h2>
-        <p><%= @question.uncertainty %></p>
-      </div>
-      <div class="question-show-edit-delete">
-        <% if @question.user == current_user %>
-          <%= link_to "編集", edit_question_path(@question)%>
-          <%= link_to "削除", question_path(@question), method: :delete, data: {confirm: "削除しますか？"} %>
-        <% end %>
-      </div>
+<div class="question-page">
+  <div class="question-contents">
+    <!--カテゴリー一覧-->
+    <div class="categories-index categories-question-show">
+      <%= render 'questions/categories', categories: @categories %>
     </div>
-    <!--お気に入り-->
-    <div class="favorite-content">
-
-      <% if @question.favorited_by?(current_user) %>
-        <p>
-          <%= link_to question_favorites_path(@question), method: :delete do %>
-            ♥お気に入りから外す
-          <% end %>
+    <!--なんで記事詳細-->
+    <div class="questions-list">
+      <div class="question-show">
+        <p class="question-titles-category"><%= @question.category.name %></p>
+        <h1 class="question-show-header"><%= @question.title %></h2>
+        <p class="question-titles-p">
+          <%= link_to @question.user.name, user_path(@question.user), class: "p-username" %>
         </p>
-        <% else %>
-        <p>
-          <%= link_to question_favorites_path(@question), method: :post do %>
-            ♡お気に入りに入れる
+        <p class="question-titles-p"><%= @question.created_at.strftime('%Y/%m/%d') %></p>
+        <div class="question-show-image"><%= attachment_image_tag @question, :image, size: '120x100' %></div>
+        <div class="question-show-observation">
+          <h2 class="question-show-item">気づいたこと</h2>
+          <p class="question-show-opinion"><%= @question.observation %></p>
+        </div>
+        <div class="question-show-impression">
+          <h2 class="question-show-item"><ruby>思ったこと</h2>
+          <p class="question-show-opinion"><%= @question.impression %></p>
+        </div>
+        <div class="question-show-realization">
+          <h2 class="question-show-item">わかったこと</h2>
+          <p class="question-show-opinion"><%= @question.realization %></p>
+        </div>
+        <div class="question-show-uncertainty">
+          <h2 class="question-show-item">まだわからないこと</h2>
+          <p class="question-show-opinion"><%= @question.uncertainty %></p>
+        </div>
+        <div class="question-show-edit-delete">
+          <% if @question.user == current_user || (current_user && current_user.admin?) %>
+            <%= link_to "編集", edit_question_path(@question), class: "question-edit edit-delete" %>
+            <%= link_to "削除", question_path(@question), method: :delete, data: {confirm: "削除しますか？"}, class: "question-delete edit-delete" %>
           <% end %>
-        </p>
-      <% end %>
-      お気に入り数<%= @question.favorites.count %>
-
-    </div>
-    <!--コメント-->
-    <div class="comment-content">
-      <%= render 'comments/index', comments: @comments %>
-    </div>
-    <div class="new-comment">
-      <%= render 'comments/comments_form', question: @question, comment: @comment %>
+        </div>
+      </div>
+      <!--お気に入り-->
+      <div class="favorite-btn-<%= @question.id %>">
+        <%= render 'favorites/favorite', question: @question %>
+      </div>
+      <!--コメント-->
+      <div class="comment-content">
+        <%= render 'comments/index', comments: @comments %>
+      </div>
+      <div class="new-comment">
+        <%= render 'comments/comments_form', question: @question, comment: @comment %>
+      </div>
     </div>
   </div>
 </div>

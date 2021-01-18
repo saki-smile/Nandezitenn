@@ -1,0 +1,24 @@
+<div class="question-page">
+  <div class="question-contents">
+    <!--カテゴリー一覧-->
+    <div class="categories-index categories-question-index">
+      <%= render 'questions/categories', categories: @categories %>
+    </div>
+    <!--記事一覧-->
+    <div class="questions-list">
+      <h1 class="questions-list-head"><ruby>検索結果<rt>けんさくけっか</rt></ruby></h1>
+      <div class="questions-item">
+        <% @search_questions.each do |s_question| %>
+          <div class="question-titles">
+            <p class="question-titles-category"><%= s_question.category.name %></p>
+            <h2><%= link_to s_question.title, question_path(s_question), class: "question-title-name" %></h2>
+            <p class="question-titles-p">
+              <%= link_to s_question.user.name, user_path(s_question.user), class: "p-username" %>
+            </p>
+            <p class="question-titles-p"><%= s_question.created_at.strftime('%Y/%m/%d') %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
