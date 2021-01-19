@@ -2,7 +2,7 @@ ja:
   activerecord:
     models:
       question: "なんで記事"
-    attributes:                 ## 属性（カラム)
+    attributes:
       question:
         title: "タイトル"
         observation: "気づいたこと"

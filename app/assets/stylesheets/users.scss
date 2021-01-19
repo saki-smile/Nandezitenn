@@ -83,16 +83,24 @@
   box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
 }
 .users-list-content{
-  background-color: gray;
+  padding: 10px 60px;
 }
 .user-list-item {
-  background-color: #fff;
   margin: 10px 0;
+}
+.user-list-item:hover {
+  background-color: rgba( 0, 0, 0, 0.1);
 }
 .user-list-link {
   text-decoration: none;
   color: #2E4159;
   font-size: 20px;
+}
+.user-list-link-items{
+  height: 100px;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
 }
 .user-list-img {
   border-radius: 50%;
@@ -107,7 +115,65 @@
 .user-profile {
   width: 25%;
   margin-right: 50px;
-  padding: 10px;
-  border-radius: 10px;
+  padding: 20px 30px;
+  // border-radius: 10px;
+  // box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
+}
+.user-profile-items{
+  txet-align: left;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.user-profile-edit{
+  color: #2E4159;
+  padding: 5px;
+  text-decoration: none;
+}
+.user-profile-edit-p{
+  margin: 10px 0;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 5px;
   box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
+}
+.user-profile-edit-p:hover{
+  background-color: rgba( 46,65,89, 0.1);
+}
+.followed{
+  color: #fff;
+  background-color: rgb( 0,128,128);
+  padding: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.followed:hover{
+  background-color: rgba( 0,128,128,0.7);
+}
+.unfollow{
+  color: rgb( 0,128,128);
+  background-color: #fff;
+  text-decoration: none;
+  border: 1px solid rgb(0,128,128);
+  padding: 4px;
+  border-radius: 5px;
+}
+.unfollow:hover{
+  background-color: rgba( 0,128,128,0.1);
+}
+.follow-btn{
+  text-align: center;
+  margin: 10px 0;
+}
+
+// ユーザー編集ページ
+.profile-edit-page {
+  padding: 50px;
+  color: #2E4159;
+}
+.profile-edit-contents{
+  background-color: #fff;
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  box-shadow: 2px 2px 4px #2E4159;
 }
