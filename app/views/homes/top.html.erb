@@ -9,11 +9,39 @@
     </ul>
   </div>
   <h1 class="homes-top-head">なんで事典トップだよ</h1>
+  <!--ランキング-->
   <div class="ranking-content">
     <h1 class="ranking-head">ランキング</h1>
     <% @rank.each.with_index(1) do |question, i| %>
     　<p><%= i %>位</p>
       <p><%= link_to question.title, question_path(question) %></p>
+    <% end %>
+  </div>
+  
+  <!--問合せ-->
+  <div class="inquiry-contents">
+    <h2>お問い合わせフォーム</h2>
+    <% if @inquiry.errors.any? %>
+      <% @inquiry.errors.full_messages.each do |message| %>
+        <p class="error-massage"><%= message %></p>
+      <% end %>
+    <% end %>
+    <%= form_with model: @inquiry, local:true do |f| %>
+      <div class="inquiry">
+        <p class="inquiry-p"><%= f.label :title %></p>
+        <%= f.text_field :name, class: "inquiry-name-field" %>
+      </div>
+      <div class="inquiry-field">
+        <p class="inquiry-field-p"><%= f.label :observation %></p>
+        <%= f.text_area :email, class: "inquiry-email-field" %>
+      </div>
+      <div class="inquiry-field">
+        <p class="inquiry-field-p"><%= f.label :impression %></p>
+        <%= f.text_area :message, class: "inquiry-message-field" %>
+      </div>
+      <button type="submit" class="inquiry-post-btn">
+        送信
+      </button>
     <% end %>
   </div>
 </div>

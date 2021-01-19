@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'homes#top'
   get 'about' => 'homes#about'
-
+  post 'homes' => 'homes#create'
   resources :users, only: [:index, :show, :edit, :update] do
     resource :relationships, only: [:create, :destroy]
     get 'followed' => 'relationships#followed', as: 'followed'
