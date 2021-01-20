@@ -3,7 +3,7 @@
   <p class="user-profile-name"><%= user.name %></p>
 </div>
 <p><%= simple_format(h(user.introduction)) %></p>
-<% if user.is_active == true %>
+<% if user.is_active == false %>
   <p>このユーザーは退会しました</p>
 <% else %>
   <!--フォローボタン-->

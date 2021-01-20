@@ -22,9 +22,9 @@
       <div class="field">
         <% if current_user.admin? %>
           <%= f.label :is_active, "会員ステータス" %><br />
-          <%= f.radio_button :is_active, :false %>
-          <%= f.label :有効, class: "status" %>
           <%= f.radio_button :is_active, :true %>
+          <%= f.label :有効, class: "status" %>
+          <%= f.radio_button :is_active, :false %>
           <%= f.label :退会, class: "status" %>
         <% end %>
       </div>

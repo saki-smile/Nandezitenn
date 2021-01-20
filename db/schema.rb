@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_12_032619) do
+ActiveRecord::Schema.define(version: 2021_01_20_031338) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2021_01_12_032619) do
     t.string "name"
     t.string "image_id"
     t.text "introduction"
-    t.boolean "is_active", default: false
+    t.boolean "is_active", default: true
     t.boolean "admin", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
