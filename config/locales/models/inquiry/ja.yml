@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    models:
+      inquiry: "お問い合わせ"
+    attributes:
+      inquiry:
+        name: "名前"
+        email: "メールアドレス"
+        message: "問合せ内容"
+  helpers:
+    submit:
+      create: 投稿
+      update: 更新
+  # errors:
+  #   messages:
+  #     not_saved: ""

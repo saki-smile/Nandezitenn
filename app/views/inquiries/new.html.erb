@@ -1,0 +1,26 @@
+<!--問合せ-->
+  <div class="inquiry-contents">
+    <h2>お問い合わせフォーム</h2>
+    <% if @inquiry.errors.any? %>
+      <% @inquiry.errors.full_messages.each do |message| %>
+        <p class="error-massage"><%= message %></p>
+      <% end %>
+    <% end %>
+    <%= form_with model: @inquiry, local:true do |f| %>
+      <div class="inquiry">
+        <p class="inquiry-p"><%= f.label :name %></p>
+        <%= f.text_field :name, class: "inquiry-name-field" %>
+      </div>
+      <div class="inquiry-field">
+        <p class="inquiry-field-p"><%= f.label :email %></p>
+        <%= f.text_area :email, class: "inquiry-email-field" %>
+      </div>
+      <div class="inquiry-field">
+        <p class="inquiry-field-p"><%= f.label :message %></p>
+        <%= f.text_area :message, class: "inquiry-message-field" %>
+      </div>
+      <button type="submit" class="inquiry-post-btn">
+        送信
+      </button>
+    <% end %>
+  </div>
