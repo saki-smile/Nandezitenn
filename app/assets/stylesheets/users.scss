@@ -164,7 +164,13 @@
   text-align: center;
   margin: 10px 0;
 }
-
+.profile-link{
+  color: #2E4159 ;
+  text-decoration: none;
+}
+.profile-link-items:hover{
+  background-color: #fff;
+}
 // ユーザー編集ページ
 .profile-edit-page {
   padding: 50px;

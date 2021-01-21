@@ -1,34 +1,38 @@
 <div class="profile-edit-page">
   <div class="profile-edit-contents">
-    <h2>プロフィール編集</h2>
-    <% if @user.errors.any? %>
-      <% @user.errors.full_messages.each do |message| %>
-        <p class="error-massage"><%= message %></p>
-      <% end %>
-    <% end %>
-    <%= form_with model: @user, local:true do |f| %>
-      <div class="field">
-        <%= f.label :name, "ニックネーム" %><br />
-        <%= f.text_field :name, autofocus: true, placeholder: "名前" %>
-      </div>
-      <div class="field">
-        <%= f.label :image, "プロフィール画像" %><br />
-        <%= f.attachment_field :image %>
-      </div>
-      <div class="field">
-        <%= f.label :introduction, "自己紹介" %><br />
-        <%= f.text_area :introduction %>
-      </div>
-      <div class="field">
-        <% if current_user.admin? %>
-          <%= f.label :is_active, "会員ステータス" %><br />
-          <%= f.radio_button :is_active, :false %>
-          <%= f.label :有効, class: "status" %>
-          <%= f.radio_button :is_active, :true %>
-          <%= f.label :退会, class: "status" %>
+    <h2 class="question-post-head">プロフィール編集</h2>
+    <div class="question-post-fields">
+      <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |message| %>
+          <p class="error-massage"><%= message %></p>
         <% end %>
-      </div>
-      <%= f.submit "変更を保存" %>
-    <% end %>
+      <% end %>
+      <%= form_with model: @user, local:true do |f| %>
+        <div class="field">
+          <p class="question-field-p"><%= f.label :name %></p>
+          <%= f.text_field :name, autofocus: true, class: "question-title-field" %>
+        </div>
+        <div class="field">
+          <p class="question-field-p"><%= f.label :image %></p>
+          <%= f.attachment_field :image, class: "question-title-field" %>
+        </div>
+        <div class="field">
+          <p class="question-field-p"><%= f.label :introduction %></p>
+          <%= f.text_area :introduction, class: "question-body-field" %>
+        </div>
+        <div class="field">
+          <% if current_user.admin? %>
+            <%= f.label :is_active, "会員ステータス" %><br />
+            <%= f.radio_button :is_active, :true %>
+            <%= f.label :有効, class: "status" %>
+            <%= f.radio_button :is_active, :false %>
+            <%= f.label :退会, class: "status" %>
+          <% end %>
+        </div>
+        <button type="submit" class="question-post-btn">
+          変更を保存
+        </button>
+      <% end %>
+    </div>
   </div>
 </div>
