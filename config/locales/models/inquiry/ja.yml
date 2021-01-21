@@ -6,7 +6,7 @@ ja:
       inquiry:
         name: "名前"
         email: "メールアドレス"
-        massage: "お問い合わせ内容"
+        message: "お問い合わせ内容"
   helpers:
     submit:
       create: 投稿
@@ -14,4 +14,3 @@ ja:
   errors:
     messages:
       not_saved: ""
-      
