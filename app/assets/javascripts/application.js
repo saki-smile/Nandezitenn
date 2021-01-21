@@ -24,14 +24,17 @@
 // });
 document.addEventListener("turbolinks:load", function() {
   $(document).ready(function () {
-    $("#theTarget").bxSlider({
-      auto: true,
-      slideWidth: 800,
-      nextText: ">",
-      prevText: "<",
-      // minSlides: 3,
-      // maxSlides: 3,
-      moveSlides: 1
+    $("#theTarget").skippr({
+      transition : 'fade',
+      speed : 1000,
+      easing : 'easeOutQuart',
+      navType : 'block',
+      childrenElementType : 'div',
+      arrows : true,
+      autoPlay : true,
+      autoPlayDuration : 2000,
+      keyboardOnAlways : true,
+      hidePrevious : false
     });
   });
 });
