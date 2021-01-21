@@ -1,0 +1,28 @@
+.image1 {
+  background-image: image-url("image1.jpg"); }
+
+.image2 {
+  background-image: image-url("image2.jpg"); }
+
+.image3 {
+  background-image: image-url("image3.jpg"); }
+
+.homes-top-page {
+  padding: 20px; }
+
+.welcome-contents {
+  display: flex; }
+
+#container {
+  height: 500px;
+  background-color: #733244;
+  width: 700px;
+  margin: 0 50px; }
+
+.homes-top-welcome {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  width: 500px;
+  padding: 50px;
+  color: #2E4159; }
+
+/*# sourceMappingURL=homes.css.map */

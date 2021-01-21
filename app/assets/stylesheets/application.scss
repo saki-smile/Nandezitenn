@@ -17,54 +17,48 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
+main {
+  background-color: #F2F2F2;
+}
+// ヘッダー
 header {
   width: 100%;
   background-color: #2E4159;
   padding: 15px 20px 20px;
   position: relative;
 }
-
 ul {
   list-style: none;
 }
-
 li {
   margin-left: 10px;
 }
-
 li:hover {
   width: 120px;
 }
-
 .nav-contents {
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
-
 .header-logo {
   margin-right: auto;
 }
-
 .header-logo:hover {
   margin-left: 4px;
 }
-
 .nav-list {
   display: flex;
 }
-
 .header-username {
   color: #F2F2F2;
 }
-
 .search-form {
   margin: 0 auto;
   position: relative;
@@ -77,18 +71,15 @@ li:hover {
   overflow: hidden;
   background-color: #F2F2F2;
 }
-
 .search_field {
   background-color: #F2F2F2;
   width: 400px;
   border: none;
   height: 2.0em;
 }
-
 .search_field:focus {
   outline: 0;
 }
-
 .search_btn {
   cursor: pointer;
   border: none;
@@ -101,15 +92,45 @@ li:hover {
   top: -3px;
   outline : none;
 }
-
 .search_btn:hover {
   background: rgba(115,50,68,0.9);
 }
-
-.under-head {
-  background-color: #F2F2F2;
+// トップ
+.homes-top-page{
+  padding: 20px;
 }
-
-main {
-  background-color: #F2F2F2;
+.image1 {
+  background-image: image-url("image1.jpg");
+}
+.image2 {
+  background-image: image-url("image2.jpg");
+}
+.image3 {
+  background-image: image-url("image3.jpg");
+}
+.welcome-contents{
+  display: flex;
+}
+#container{
+  height: 500px;
+  // background-color: rgb(115,50,68);
+  width: 700px;
+  margin: 0 100px;
+}
+.homes-top-welcome{
+  box-shadow: 5px 5px 10px rgba( 0, 0, 0, 0.7);
+  width: 400px;
+  padding: 50px;
+  color: #fff;
+  background-color: rgb(115,50,68);
+  border-radius: 5px;
+}
+.welcome-head{
+  background-color: rgba( 242, 242, 242, 0.2);
+  text-align: center;
+  border-radius: 5px;
+}
+.welcome-item{
+  padding: 50px 10px;
+  font-size: 17px;
 }
