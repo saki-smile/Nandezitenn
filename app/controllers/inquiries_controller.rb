@@ -5,10 +5,14 @@ class InquiriesController < ApplicationController
 
   def create
     @inquiry = Inquiry.new(inquiry_params)
-    InquiryMailer.received_email(@inquiry).deliver
-    redirect_to thanks_path
+    if @inquiry.save
+      InquiryMailer.received_email(@inquiry).deliver
+      redirect_to thanks_path
+    else
+      render :new
+    end
   end
-  
+
   def thanks
   end
 

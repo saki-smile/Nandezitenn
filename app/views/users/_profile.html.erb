@@ -19,7 +19,13 @@
   </p>
 <% end %>
 <!--お気に入り一覧-->
-<p><%= link_to "お気に入りなんで事典", users_favorites_path(user) %></p>
-
-<p><%= link_to "フォロー一覧", user_followed_path(user) %></p>
-<p><%= link_to "フォロワー一覧", user_follower_path(user) %></p>
+<p class="profile-link-items">
+  <%= link_to "お気に入りなんで事典", users_favorites_path(user), class: "profile-link" %>
+</p>
+<p class="profile-link-items">
+  <%= link_to "フォロー一覧", user_followed_path(user), class: "profile-link" %>
+</p>
+<p class="profile-link-items">
+  <%= link_to "フォロワー一覧", user_follower_path(user), class: "profile-link" %>
+</p>
+  
