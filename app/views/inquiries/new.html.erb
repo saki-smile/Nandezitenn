@@ -20,9 +20,7 @@
           <p class="inquiry-field-p"><%= f.label :message %></p>
           <%= f.text_area :message, class: "inquiry-body-field" %>
         </div>
-        <button type="submit" class="inquiry-post-btn">
-          送信
-        </button>
+        <%= f.submit "送信", data: { confirm: "この内容で送信しますか？"} %>
       <% end %>
     </div>
   </div>
