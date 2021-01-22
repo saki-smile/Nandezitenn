@@ -1,4 +1,6 @@
 class InquiriesController < ApplicationController
+  before_action :authenticate_user!,except: [:new, :create, :thanks]
+
   def new
     @inquiry = Inquiry.new
   end
