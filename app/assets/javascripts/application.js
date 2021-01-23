@@ -32,7 +32,7 @@ document.addEventListener("turbolinks:load", function() {
       childrenElementType : 'div',
       arrows : true,
       autoPlay : true,
-      autoPlayDuration : 2000,
+      autoPlayDuration : 3000,
       keyboardOnAlways : true,
       hidePrevious : false
     });
