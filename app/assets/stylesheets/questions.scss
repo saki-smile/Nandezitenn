@@ -62,7 +62,6 @@
 // 投稿詳細
 .question-show{
   padding-bottom: 20px;
-
 }
 .question-show-header{
   font-size: 24px;
@@ -77,11 +76,12 @@
 }
 .question-show-item{
   font-size: 18px;
-  margin-top: 5px;
+  margin-top: 15px;
 }
-.question-show-opinion{
-  margin-bottom: 15px;
-}
+// .question-show-opinion{
+//   margin-top: 10px;
+//   margin-bottom: 50px;
+// }
 .question-edit {
   background-color: rgba(46,65,89,0.9);
 }
@@ -101,6 +101,9 @@
   border-radius: 5px;
   color: #fff;
   text-decoration: none;
+}
+.question-show-edit-delete{
+  margin-top: 20px;
 }
 
 // カテゴリー
@@ -155,7 +158,6 @@
   height: 30px;
   margin-bottom: 10px;
 }
-
 .question-title-field{
   width: 100%;
   height: 30px;

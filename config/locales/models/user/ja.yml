@@ -8,6 +8,7 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード"
+        image: "プロフィール画像"
         introduction: "自己紹介"
   helpers: # ここから下を追加する
     submit:

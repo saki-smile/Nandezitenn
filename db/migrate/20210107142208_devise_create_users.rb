@@ -35,7 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :image_id
       t.text :introduction
-      t.boolean :is_active, default: false
+      t.boolean :is_active, default: true
       t.boolean :admin, default: false
       t.timestamps null: false
     end
