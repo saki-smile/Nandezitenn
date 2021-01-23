@@ -1,7 +1,7 @@
-# FactoryBot.define do
-#   factory :question do
-#     body { Faker::Lorem.characters(number: 20) }
-#     user
-#     question
-#   end
-# end
+FactoryBot.define do
+  factory :comment do
+    body { Faker::Lorem.characters(number: 20) }
+    association :user
+    association :question
+  end
+end
