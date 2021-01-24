@@ -1,6 +1,6 @@
-<div class="inquiry-post-page">
-  <div class="inquiry-post-contents">
-    <h1 class="inquiry-post-head">問合せ</h1>
+<div class="page-padding">
+  <div class="post-contents-box">
+    <h1 class="post-contents-head">お問い合せ</h1>
     <div class="inquiry-post-fields">
       <% if @inquiry.errors.any? %>
           <% @inquiry.errors.full_messages.each do |message| %>
@@ -20,7 +20,7 @@
           <p class="inquiry-field-p"><%= f.label :message %></p>
           <%= f.text_area :message, class: "inquiry-body-field" %>
         </div>
-        <%= f.submit "送信", data: { confirm: "この内容で送信しますか？"} %>
+        <%= f.submit "送信", data: { confirm: "この内容で送信しますか？"}, class: "inquiry-post-btn" %>
       <% end %>
     </div>
   </div>

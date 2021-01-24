@@ -7,7 +7,11 @@
     <!--ユーザーの投稿一覧-->
     <div class="questions-list">
       <h3 class="questions-list-head"><%= @user.name %> のなんで事典</h3>
-      <%= render 'questions/question', questions: @questions %>
+      <% if @questions.present? %>
+        <%= render 'questions/question', questions: @questions %>
+      <% else %>
+        <p>投稿はまだありません</p>
+      <% end %>
       <div class="user-show-paginate paginate">
         <%= paginate @questions %>
       </div>

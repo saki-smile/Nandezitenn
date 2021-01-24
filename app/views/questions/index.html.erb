@@ -1,4 +1,4 @@
-<div class="question-page">
+<div class="page-padding">
   <div class="question-contents">
     <!--カテゴリー一覧-->
     <div class="categories-index categories-question-index">
@@ -6,8 +6,19 @@
     </div>
     <!--記事一覧-->
     <div class="questions-list">
-      <h1 class="questions-list-head">なんで<ruby>記事<rt>きじ</rt>一覧<rt>いちらん</rt></ruby></h1>
-      <%= render 'questions/question', questions: @questions %>
+      <h1 class="questions-list-head">
+        <% if @category.present? %>
+          <%= @category.name %>
+        <% else %>
+          なんで
+        <% end %>
+        <ruby>記事<rt>きじ</rt>一覧<rt>いちらん</rt></ruby>
+      </h1>
+      <% if @questions.present? %>
+        <%= render 'questions/question', questions: @questions %>
+      <% else %>
+        <p>まだ記事はありません</p>
+      <% end %>
       <div class="question-index-paginate paginate">
         <%= paginate @questions %>
       </div>
