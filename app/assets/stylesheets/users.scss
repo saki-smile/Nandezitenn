@@ -7,15 +7,6 @@
   padding: 90px;
   color: #2E4159;
 }
-.devise-contents {
-  background-color: #fff;
-  border-radius: 10px;
-  width: 600px;
-  margin: 0 auto;
-  padding: 30px;
-  box-shadow: 2px 2px 4px #2E4159;
-}
-
 #error_explanation{
   color: red;
 }
@@ -33,12 +24,12 @@
 .devise-table th {
   width: 50%;
 }
-.signup-p {
+.signup-p, .field_with_errors{
   font-size: 16px;
   text-align: left;
 }
 .devise-field {
-  width: 90%;
+  width: 100%;
   height: 30px;
 }
 .devise-field:hover {
@@ -54,7 +45,7 @@
 .btn {
   cursor: pointer;
   background-color: rgba(115,50,68,0.9);
-  width: 500px;
+  width: 100%;
   margin: 0 auto;
   border-radius: 20px;
   height: 40px;
@@ -84,12 +75,13 @@
 }
 .users-list-content{
   padding: 10px 60px;
+  min-height: 220px;
 }
 .user-list-item {
   margin: 10px 0;
 }
 .user-list-item:hover {
-  background-color: rgba( 0, 0, 0, 0.1);
+  background-color: rgba( 46,65,89, 0.1);
 }
 .user-list-link {
   text-decoration: none;
