@@ -8,7 +8,7 @@
 <% else %>
   <!--フォローボタン-->
   <% unless current_user && user.id == current_user.id %>
-    <div class="follow-btn">
+    <div class="<%= user.id %>-follow-btn follow-btn">
       <%= render 'follow', user: user %>
     </div>
   <% end %>
@@ -28,4 +28,3 @@
 <p class="profile-link-items">
   <%= link_to "フォロワー一覧", user_follower_path(user), class: "profile-link" %>
 </p>
-  
