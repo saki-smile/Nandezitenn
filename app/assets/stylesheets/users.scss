@@ -91,18 +91,23 @@
 .user-list-link-items{
   height: 100px;
   display: flex;
-  // justify-content: center;
   align-items: center;
 }
 .user-list-img {
   border-radius: 50%;
-  border: 10px;
 }
 .user-list-username {
-  display: inline-block;
   margin: 0 40px;
 }
-
+.follow-table-image {
+  width: 10%;
+}
+.follow-table-name {
+  width: 70%;
+}
+.follow-table-btn {
+  width: 20%;
+}
 // ユーザー詳細ページ
 .user-profile {
   width: 25%;
