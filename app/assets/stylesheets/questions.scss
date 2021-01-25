@@ -66,6 +66,8 @@
 // 投稿詳細
 .question-show{
   padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(115,50,68,0.9);
 }
 .question-show-header{
   font-size: 24px;
@@ -109,7 +111,20 @@
 .question-show-edit-delete{
   margin-top: 20px;
 }
-
+.unfavorite-btn{
+  color: red;
+  text-decoration: none;
+}
+.favorite-btn{
+  text-decoration: none;
+}
+.favorite-count{
+  color: red;
+  margin-bottom: 10px;
+}
+.comments-cnt{
+  margin-top: 20px;
+}
 // カテゴリー
 .category-head{
   font-size: 20px;
