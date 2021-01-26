@@ -35,7 +35,7 @@
         <div class="question-show-edit-delete">
           <% if @question.user == current_user || (current_user && current_user.admin?) %>
             <%= link_to "編集", edit_question_path(@question), class: "question-edit edit-delete" %>
-            <%= link_to "削除", question_path(@question), method: :delete, data: {confirm: "削除しますか？"}, class: "question-delete edit-delete" %>
+            <%= link_to "削除", question_path(@question), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "question-delete edit-delete" %>
           <% end %>
         </div>
       </div>
