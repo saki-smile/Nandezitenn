@@ -52,7 +52,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to questions_path
+    redirect_to user_path(current_user.id)
   end
 
   private
