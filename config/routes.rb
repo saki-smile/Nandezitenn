@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     resource :relationships, only: [:create, :destroy]
     get 'followed' => 'relationships#followed', as: 'followed'
     get 'follower' => 'relationships#follower', as: 'follower'
+    get 'out' => 'users#out'
+    get 'hide' => 'users#hide'
   end
   get 'users/:id/favorites' => 'users#favorite', as: 'users_favorites'
   resources :questions do

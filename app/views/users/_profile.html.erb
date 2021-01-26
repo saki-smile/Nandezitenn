@@ -13,9 +13,14 @@
     </div>
   <% end %>
 <% end %>
-<% if (current_user && user.id == current_user.id) || (current_user && current_user.admin?) %>
+<% if (user_signed_in? && user.id == current_user.id) || (current_user && current_user.admin?) %>
   <p class="user-profile-edit-p">
     <%= link_to "プロフィール編集", edit_user_path(user), class: "user-profile-edit" %>
+  </p>
+<% end %>
+<% if user_signed_in? && user.id == current_user.id %>
+  <p class="user-hide">
+    <%= link_to "退会する", user_out_path(user) %>
   </p>
 <% end %>
 <!--お気に入り一覧-->
