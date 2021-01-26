@@ -18,11 +18,6 @@
     <%= link_to "プロフィール編集", edit_user_path(user), class: "user-profile-edit" %>
   </p>
 <% end %>
-<% if user_signed_in? && user.id == current_user.id %>
-  <p class="user-hide">
-    <%= link_to "退会する", user_out_path(user) %>
-  </p>
-<% end %>
 <!--お気に入り一覧-->
 <p class="profile-link-items">
   <%= link_to "お気に入りなんで事典", users_favorites_path(user), class: "profile-link" %>
@@ -33,3 +28,8 @@
 <p class="profile-link-items">
   <%= link_to "フォロワー一覧", user_follower_path(user), class: "profile-link" %>
 </p>
+<% if user_signed_in? && user.id == current_user.id %>
+  <p class="user-out">
+    <%= link_to "退会する", user_out_path(user), class: "out-btn" %>
+  </p>
+<% end %>
