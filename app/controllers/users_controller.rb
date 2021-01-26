@@ -31,6 +31,23 @@ class UsersController < ApplicationController
     end
   end
 
+  def out
+    @user = User.find(params[:user_id])
+    if @user == current_user
+      render :out
+    else
+      redirect_to users_path
+    end
+  end
+
+  def hide
+    @user = User.find(params[:user_id])
+    @user.update(is_active:false)
+    reset_session #ユーザーをログアウト
+    flash[:notice] = "退会しました"
+    redirect_to root_path
+  end
+
   private
 
   def user_params
