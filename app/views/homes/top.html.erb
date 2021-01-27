@@ -35,7 +35,7 @@
       <tr>
         <td class="ranking-num"><%= i %>位</td>
         <td class="ranking-title"><%= link_to question.title, question_path(question), class: "ranking-title" %></td>
-        <td class="ranking-username"><%= link_to question.user.name, question_path(question), class: "ranking-username" %></td>
+        <td class="ranking-username"><%= link_to question.user.name, user_path(question.user), class: "ranking-username" %></td>
       </tr>
     </table>
     <% end %>

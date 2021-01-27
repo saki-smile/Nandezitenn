@@ -42,8 +42,8 @@ class UsersController < ApplicationController
 
   def hide
     @user = User.find(params[:user_id])
-    @user.update(is_active:false)
-    reset_session #ユーザーをログアウト
+    @user.update(is_active: false)
+    reset_session
     flash[:notice] = "退会しました"
     redirect_to root_path
   end
