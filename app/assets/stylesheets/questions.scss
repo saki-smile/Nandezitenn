@@ -84,6 +84,10 @@
   font-size: 18px;
   margin-top: 15px;
 }
+.question-show-image{
+  text-align: center;
+  margin-top: 20px
+}
 // .question-show-opinion{
 //   margin-top: 10px;
 //   margin-bottom: 50px;
@@ -124,6 +128,20 @@
 }
 .comments-cnt{
   margin-top: 20px;
+}
+.comment-name{
+  text-decoration: none;
+}
+.comment-delete-content{
+  margin-bottom: 10px;
+}
+.comment-delete{
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(115,50,68,0.9);
 }
 // カテゴリー
 .category-head{
