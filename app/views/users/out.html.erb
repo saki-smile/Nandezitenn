@@ -8,7 +8,7 @@
     </p>
     <div class="out-btn-content">
       <%= link_to "退会しない", user_path(current_user.id), class: "out-cancel cancel-ok" %>
-      <%= link_to "退会する", user_hide_path(@user), class: "out-ok cancel-ok" %>
+      <%= link_to "退会する", hide_user_path(@user), class: "out-ok cancel-ok" %>
     </div>
   </div>
 </div>
