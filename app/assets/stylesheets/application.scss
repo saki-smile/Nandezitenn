@@ -134,6 +134,47 @@ li:hover {
   padding: 50px 10px;
   font-size: 17px;
 }
+.top-text{
+  text-align: center;
+  width: 85%;
+  margin: 0px auto;
+  padding: 40px;
+  color: #2E4159;
+}
+.ranking-content{
+  width: 60%;
+  margin: 0 auto;
+}
+.ranking-head{
+  font-size: 28px;
+  color: #2E4159;
+}
+.fa-crown{
+  color: orange;
+}
+.ranking-table{
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+.ranking-num{
+  width: 10%;
+  color: orange;
+}
+.ranking-title{
+  width: 60%;
+  text-decoration: none;
+  color: #2E4159;
+}
+.ranking-username{
+  width: 30%;
+  text-decoration: none;
+  color: #2E4159;
+}
+.top-inquiry-link{
+  text-align: center;
+  margin-top: 50px;
+}
 // アバウト
 .about-padding{
   width: 50%;
