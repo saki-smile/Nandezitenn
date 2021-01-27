@@ -2,21 +2,17 @@
   <%= @question.comments.count %>コメント
 </div>
 <div class="commments-area">
-  <table>
   <% comments.each do |comment| %>
-    <tr>
-      <td>
-      <%= link_to user_path(comment.user) do %>
-        <%= comment.user.name %>
+   <div class="comennt-item">
+      <p>
+        <%= link_to comment.user.name, user_path(comment.user), class: "comment-name" %>
+      </p>
+      <p><%= simple_format(h(comment.body)) %></p>
+      <% if comment.user == current_user %>
+      <p class="comment-delete-content">
+        <%= link_to "削除", question_comment_path(comment.question, comment), method: :delete, remote: true,class: "comment-delete" %>
+      </p>
       <% end %>
-      </td>
-      <td><%= comment.body %></td>
-      <td>
-        <% if comment.user == current_user %>
-          <%= link_to "Destroy", question_comment_path(comment.question, comment), method: :delete, remote: true %>
-        <% end %>
-      </td>
-    </tr>
+   </div>
   <% end %>
-  </table>
 </div>
