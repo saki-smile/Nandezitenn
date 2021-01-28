@@ -20,7 +20,6 @@
 疑問に思うことがあったとき
 色々なものに興味が出たとき
 
-## 設計書
 
 ## 機能一覧
 [機能一覧](https://docs.google.com/spreadsheets/d/1NqfZ9fBHGRX3eVofbYI3WX2X0Xn-7qJKsv7pPPyr5FU/edit#gid=0)
