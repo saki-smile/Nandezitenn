@@ -10,10 +10,6 @@ ja:
         password_confirmation: "パスワード"
         image: "プロフィール画像"
         introduction: "自己紹介"
-  helpers: # ここから下を追加する
-    submit:
-      create: 登録
-      update: 更新
   devise:
     sessions:
       user:

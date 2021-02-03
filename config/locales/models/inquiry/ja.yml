@@ -7,10 +7,3 @@ ja:
         name: "名前"
         email: "メールアドレス"
         message: "お問い合わせ内容"
-  helpers:
-    submit:
-      create: 投稿
-      update: 更新
-  errors:
-    messages:
-      not_saved: ""

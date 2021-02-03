@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      comment: "コメント"
+    attributes:                 ## 属性（カラム)
+      comment:
+        body: "コメント"
