@@ -3,11 +3,21 @@
 </div>
 <div class="commments-area">
   <% comments.each do |comment| %>
-   <div class="comennt-item">
-      <p>
-        <%= link_to comment.user.name, user_path(comment.user), class: "comment-name" %>
-      </p>
+   <div class="comment-item">
+      <div class="comment-item-head">
+        <%= attachment_image_tag comment.user, :image, size: '40x40', fallback: "no_image.png", class: "user-list-img" %>
+        <%= link_to comment.user.name, user_path(comment.user), class: "comment-username" %>
+        <%= comment.created_at.strftime('%Y/%m/%d') %></p>
+      </div>
       <p><%= simple_format(h(comment.body)) %></p>
+      <div class="sentiment-score">
+      <% if current_user.admin? && comment.score.to_f < 0.5 %>
+        スコア : <%= comment.score %>
+        <p class="comment-delete-content">
+          <%= link_to "削除", question_comment_path(comment.question, comment), method: :delete, remote: true,class: "comment-delete" %>
+        </p>
+      <% end %>
+      </div>
       <% if comment.user == current_user %>
       <p class="comment-delete-content">
         <%= link_to "削除", question_comment_path(comment.question, comment), method: :delete, remote: true,class: "comment-delete" %>
