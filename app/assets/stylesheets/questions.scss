@@ -129,11 +129,21 @@
 .comments-cnt{
   margin-top: 20px;
 }
-.comment-name{
+.comment-item{
+  margin-top: 15px;
+}
+.comment-item-head{
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.comment-username {
+  margin: 0 10px;
   text-decoration: none;
 }
 .comment-delete-content{
-  margin-bottom: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 .comment-delete{
   font-size: 16px;

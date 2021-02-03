@@ -4,6 +4,7 @@ class CommentsController < ApplicationController
   def create
     # 投稿に紐づいたコメントを作成
     @comment = @question.comments.build(comment_params)
+    @comment.score = Language.get_data(comment_params[:body])
     @comment.user_id = current_user.id
     @comment.save
     render :index
