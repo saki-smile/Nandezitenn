@@ -2,11 +2,8 @@
   <div class="post-contents-box">
     <h1 class="post-contents-head">お問い合せ</h1>
     <div class="inquiry-post-fields">
-      <% if @inquiry.errors.any? %>
-          <% @inquiry.errors.full_messages.each do |message| %>
-            <p class="error-massage"><%= message %></p>
-          <% end %>
-      <% end %>
+      <!--エラーメッセージ-->
+      <%= render 'layouts/error', obj: @inquiry %>
       <%= form_with model: @inquiry, local:true do |f| %>
         <div class="inquiry-field">
           <p class="inquiry-field-p"><%= f.label :name %></p>
