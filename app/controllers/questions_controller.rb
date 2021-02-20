@@ -52,7 +52,8 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to questions_path
+    flash[:notice] = "なんで記事を削除しました"
+    redirect_to user_path(current_user.id)
   end
 
   private

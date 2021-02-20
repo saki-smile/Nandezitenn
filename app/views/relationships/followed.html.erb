@@ -1,32 +1,6 @@
-<div class="user-page">
-  <div class="users-list">
-    <h1 class="questions-list-head">フォロー<ruby>一覧<rt>いちらん</rt></ruby></h1>
-    <div class="users-list-content">
-      <% @users.each do |user| %>
-      <div class="user-list-item">
-        <!--管理者は一覧に表示されないようにする-->
-        <% unless user.admin? %>
-          <%= link_to user_path(user), class: "user-list-link" do %>
-          <div class="user-list-link-items">
-            <%= attachment_image_tag user, :image, size: '80x80', fallback: "no_image.png", class: "user-list-img" %>
-            <p class="user-list-username"><%= user.name %></p>
-          </div>
-          <% end %>
-          <% if current_user && current_user.admin? %>
-            <div class="user-status">
-              <% if user.is_active == false %>
-                <p>退会済み</p>
-              <% else %>
-                <p>有効</p>
-              <% end %>
-            </div>
-          <% end %>
-        <% end %>
-      </div>
-      <% end %>
-    </div>
-      <!--<div class="follow-btn-<%#= user.id %>">-->
-      <!--  <%#= render 'users/follow', user: user %>-->
-      <!--</div>-->
+<div class="page-padding">
+  <div class="post-contents-box">
+    <h1 class="post-contents-head">フォロー<ruby>一覧<rt>いちらん</rt></ruby></h1>
+    <%= render 'follow_user', users: @users %>
   </div>
 </div>

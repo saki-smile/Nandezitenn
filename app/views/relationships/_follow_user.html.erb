@@ -1,0 +1,25 @@
+<div class="users-list-content">
+  <% if users.present? %>
+    <% users.each do |user| %>
+    <div class="user-list-item">
+      <%= link_to user_path(user), class: "user-list-link" do %>
+        <table class="follow-table">
+          <tr>
+            <td class="follow-table-image">
+              <%= attachment_image_tag user, :image, size: '80x80', fallback: "no_image.png", class: "user-list-img" %>
+            </td>
+            <td class="follow-table-name">
+              <p class="user-list-username"><%= user.name %></p>
+            </td>
+            <td class="<%= user.id %>-follow-btn follow-table-btn">
+              <%= render 'users/follow', user: user %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+    <% end %>
+  <% else %>
+    <p>まだユーザーはいません</p>
+  <% end %>
+</div>

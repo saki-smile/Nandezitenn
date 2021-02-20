@@ -26,6 +26,9 @@
 main {
   background-color: #F2F2F2;
 }
+.text-notice{
+  color: green;
+}
 // ヘッダー
 header {
   width: 100%;
@@ -131,6 +134,85 @@ li:hover {
   padding: 50px 10px;
   font-size: 17px;
 }
+.top-text{
+  text-align: center;
+  width: 85%;
+  margin: 0px auto;
+  padding: 40px;
+  color: #2E4159;
+}
+.ranking-content{
+  width: 60%;
+  margin: 0 auto;
+}
+.ranking-head{
+  font-size: 28px;
+  color: #2E4159;
+}
+.fa-crown{
+  color: orange;
+}
+.ranking-table{
+  width: 100%;
+  margin: 0 auto;
+  font-size: 18px;
+}
+.ranking-num{
+  width: 10%;
+  color: orange;
+}
+.ranking-title{
+  width: 60%;
+  text-decoration: none;
+  color: #2E4159;
+}
+.ranking-username{
+  width: 30%;
+  text-decoration: none;
+  color: #2E4159;
+}
+.top-inquiry-link{
+  text-align: center;
+  margin-top: 50px;
+}
+// アバウト
+.about-padding{
+  width: 50%;
+  margin: 0 auto;
+}
+.about-head{
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+.about-box{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+.about-items{
+  width: 120px;
+  height: 120px;
+  background-color: red;
+  padding-top: 48px;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 3px 3px 6px rgba( 0, 0, 0, 0.3);
+}
+.about-items1{
+  background-color: #ffa347;
+}
+.about-items2{
+  background-color: #ff7fbf;
+}
+.about-items3{
+  background-color: #a347ff;
+}
+.about-items4{
+  background-color: #47a3ff;
+}
 // フッター
 footer{
   background-color: #2E4159;
@@ -139,4 +221,23 @@ footer{
 }
 .footer-text{
   text-align: center;
+}
+// ページネーション
+.paginate{
+  text-align: center;
+}
+.pagination{
+  color: #2E4159;
+  font-size: 20px;
+  padding: 10px;
+}
+.pagenate-layout {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 10px;
+  background-color: rgba( 46,65,89, 0.3);
+  margin: 0;
+}
+.pagenate-layout:hover{
+  background-color: rgba( 46,65,89, 0.1);
 }

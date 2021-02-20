@@ -7,7 +7,11 @@
     <!--お気に入り一覧-->
     <div class="questions-list">
       <h1 class="questions-list-head"><%= @user.name %> のお気に入りなんで事典</h1>
-      <%= render 'questions/question', questions: @favorite_questions %>
+      <% if @favorite_questions.present? %>
+        <%= render 'questions/question', questions: @favorite_questions %>
+      <% else %>
+        <p>お気に入り記事はまだありません</p>
+      <% end %>
       <div class="user-favorite-paginate paginate">
         <%= paginate @favorite_questions %>
       </div>

@@ -7,15 +7,6 @@
   padding: 90px;
   color: #2E4159;
 }
-.devise-contents {
-  background-color: #fff;
-  border-radius: 10px;
-  width: 600px;
-  margin: 0 auto;
-  padding: 30px;
-  box-shadow: 2px 2px 4px #2E4159;
-}
-
 #error_explanation{
   color: red;
 }
@@ -33,12 +24,12 @@
 .devise-table th {
   width: 50%;
 }
-.signup-p {
+.signup-p, .field_with_errors{
   font-size: 16px;
   text-align: left;
 }
 .devise-field {
-  width: 90%;
+  width: 100%;
   height: 30px;
 }
 .devise-field:hover {
@@ -54,7 +45,7 @@
 .btn {
   cursor: pointer;
   background-color: rgba(115,50,68,0.9);
-  width: 500px;
+  width: 100%;
   margin: 0 auto;
   border-radius: 20px;
   height: 40px;
@@ -68,7 +59,7 @@
 // ユーザー一覧ページ
 .user-page {
   padding: 50px 0;
-  min-height: 600px;
+  min-height: 450px;
   color: #2E4159;
 }
 .user-contents {
@@ -84,12 +75,13 @@
 }
 .users-list-content{
   padding: 10px 60px;
+  min-height: 220px;
 }
 .user-list-item {
   margin: 10px 0;
 }
 .user-list-item:hover {
-  background-color: rgba( 0, 0, 0, 0.1);
+  background-color: rgba( 46,65,89, 0.1);
 }
 .user-list-link {
   text-decoration: none;
@@ -99,18 +91,23 @@
 .user-list-link-items{
   height: 100px;
   display: flex;
-  // justify-content: center;
   align-items: center;
 }
 .user-list-img {
   border-radius: 50%;
-  border: 10px;
 }
 .user-list-username {
-  display: inline-block;
   margin: 0 40px;
 }
-
+.follow-table-image {
+  width: 10%;
+}
+.follow-table-name {
+  width: 60%;
+}
+.follow-table-btn {
+  width: 30%;
+}
 // ユーザー詳細ページ
 .user-profile {
   width: 25%;
@@ -171,15 +168,56 @@
 .profile-link-items:hover{
   background-color: #fff;
 }
-// ユーザー編集ページ
-.profile-edit-page {
-  padding: 50px;
-  color: #2E4159;
+.user-out{
+  margin-top: 10px;
 }
-.profile-edit-contents{
-  background-color: #fff;
-  width: 600px;
+.out-btn{
+  text-decoration: none;
+  background-color: rgb(115,50,68);
+  color: #f2f2f2;
+  padding: 5px;
+  border-radius: 5px;
+}
+.out-btn:hover{
+  background-color: rgba(115,50,68,0.7);
+}
+// ユーザー編集ページ
+
+
+.user-out-head {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.out-box{
+  width: 50%;
   margin: 0 auto;
-  padding: 30px;
-  box-shadow: 2px 2px 4px #2E4159;
+  padding: 50px 100px;
+}
+.user-out-text{
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+.out-btn-content{
+  text-align: center;
+}
+.cancel-ok{
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0 20px;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+.out-cancel{
+  background-color: rgb( 46,65,89);
+}
+.out-cancel:hover{
+  background-color: rgba( 46,65,89,0.7);
+}
+.out-ok{
+  background-color: rgb(115,50,68);
+}
+.out-ok:hover{
+  background-color: rgba(115,50,68,0.7);
 }

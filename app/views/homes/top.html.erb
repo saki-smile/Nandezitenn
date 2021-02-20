@@ -8,25 +8,38 @@
       </div>
     </div>
     <div class="homes-top-welcome">
-      <h1 class="welcome-head">なんで事典</h1>
+      <h1 class="welcome-head">なんで<ruby>事典<rt>じてん</rt></ruby></h1>
       <p class="welcome-item">
         せかいにはふしぎがいっぱい！<br>
           <br>
-        なんで？ どうして？？<br>
+        なんで？ どうして？?<br>
         いろんなふしぎを調べて、試して。<br>
         　<br>
         自分だけのなんで事典を作ろう！
       </p>
     </div>
   </div>
-  <h1 class="homes-top-head">なんで事典トップだよ</h1>
+  <div class="top-text">
+    <p>
+      <%= link_to "ログイン", new_user_session_path %>、
+      <%= link_to "新規登録", new_user_registration_path %>
+      をしてなんで記事を投稿しよう！
+    </p>
+  </div>
   <div class="ranking-content">
-    <h1 class="ranking-head">ランキング</h1>
+    <h1 class="ranking-head">
+      <i class="fas fa-crown"></i> ランキング <i class="fas fa-crown"></i>
+    </h1>
     <% @rank.each.with_index(1) do |question, i| %>
-    　<p><%= i %>位</p>
-      <p><%= link_to question.title, question_path(question) %></p>
+    <table class="ranking-table">
+      <tr>
+        <td class="ranking-num"><%= i %>位</td>
+        <td class="ranking-title"><%= link_to question.title, question_path(question), class: "ranking-title" %></td>
+        <td class="ranking-username"><%= link_to question.user.name, user_path(question.user), class: "ranking-username" %></td>
+      </tr>
+    </table>
     <% end %>
   </div>
-   <p><%= link_to "問合せ", new_inquiries_path %></p>
+   <p class="top-inquiry-link"><%= link_to "問合せはこちら", new_inquiries_path %></p>
 </div>
 

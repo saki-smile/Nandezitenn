@@ -1,6 +1,6 @@
 <div class="devise-page">
-  <div class="devise-contents">
-    <h1 class="devise-head">
+  <div class="post-contents-box">
+    <h1 class="post-contents-head">
       <ruby>新規<rt>しんき</rt>登録<rt>とうろく</rt></ruby>
     </h2>
     <%= form_with model: @user, url: user_registration_path,  id: 'new_user', class: 'new_user', local: true do |f| %>
@@ -17,19 +17,22 @@
         <tr>
           <th>
             <p class="signup-p">
-              <%= f.label :password %>
-              <% if @minimum_password_length %>
-              （ <%= @minimum_password_length %> <ruby>文字<rt>もじ</rt>以上<rt>いじょう</rt></ruby> )
+              <%= f.label :password do %>
+                パスワード
+                <% if @minimum_password_length %>
+                （ <%= @minimum_password_length %> 文字以上 )
+                <% end %>
               <% end %>
             </p>
           </th>
           <th><%= f.password_field :password, autocomplete: "new-password", class: "devise-field" %></th>
         </tr>
         <tr>
-          <th>
+          <th class="devise-field">
             <p class="signup-p">
-              <%= f.label :password_confirmation %>
-              （ <ruby>確認用<rt>かくにんよう</rt></ruby> ）
+              <%= f.label :password_confirmation do %>
+                パスワード（ かくにん ）
+              <% end %>
             </p>
           </th>
           <th><%= f.password_field :password_confirmation, autocomplete: "new-password", class: "devise-field" %></th>

@@ -1,7 +1,9 @@
 <div class="questions-item">
   <% questions.each do |question| %>
   <div class="question-titles">
-    <p class="question-titles-category"><%= question.category.name %></p>
+    <p class="question-titles-category">
+      <%= link_to question.category.name, questions_path(category_id: question.category.id), class: "category-link" %>
+    </p>
     <h2><%= link_to question.title, question_path(question), class: "question-title-name" %></h2>
     <p class="question-titles-p">
       <%= link_to question.user.name, user_path(question.user), class: "p-username" %>

@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
+  <span class="error-message"></span>
   <%= form_with model:[question, comment] do |f| %>
-    <%= f.text_area :body, placeholder: "コメントをここに" %>
+    <%= f.text_area :body, placeholder: "コメントをここに", class: "question-body-field" %>
     <%= f.submit %>
   <% end %>
 <% else %>

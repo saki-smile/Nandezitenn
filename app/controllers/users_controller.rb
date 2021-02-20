@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :favorite, :edit, :update]
+  before_action :set_user, only: [:show, :favorite, :edit, :update, :out, :hide]
 
   def show
     @questions = @user.questions.page(params[:page]).reverse_order
@@ -29,6 +29,21 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def out
+    if @user == current_user
+      render :out
+    else
+      redirect_to users_path
+    end
+  end
+
+  def hide
+    @user.update(is_active: false)
+    reset_session
+    flash[:notice] = "退会しました"
+    redirect_to root_path
   end
 
   private

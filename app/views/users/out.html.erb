@@ -1,0 +1,14 @@
+<div class="page-padding">
+  <div class="out-box">
+    <h1 class="user-out-head">本当に退会しますか？</h1>
+    <p class="user-out-text">
+      退会すると、会員登録情報の閲覧や<br>
+      記事の投稿などができなくなります。<br>
+      退会する場合は、「退会する」をクリックしてください。
+    </p>
+    <div class="out-btn-content">
+      <%= link_to "退会しない", user_path(current_user.id), class: "out-cancel cancel-ok" %>
+      <%= link_to "退会する", hide_user_path(@user), class: "out-ok cancel-ok" %>
+    </div>
+  </div>
+</div>

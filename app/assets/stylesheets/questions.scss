@@ -59,9 +59,15 @@
   border-radius: 3px;
   padding: 1px;
 }
+.category-link {
+  color: #fff;
+  text-decoration: none;
+}
 // 投稿詳細
 .question-show{
   padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(115,50,68,0.9);
 }
 .question-show-header{
   font-size: 24px;
@@ -77,6 +83,10 @@
 .question-show-item{
   font-size: 18px;
   margin-top: 15px;
+}
+.question-show-image{
+  text-align: center;
+  margin-top: 20px
 }
 // .question-show-opinion{
 //   margin-top: 10px;
@@ -105,7 +115,44 @@
 .question-show-edit-delete{
   margin-top: 20px;
 }
-
+.unfavorite-btn{
+  color: red;
+  text-decoration: none;
+}
+.favorite-btn{
+  text-decoration: none;
+}
+.favorite-count{
+  color: red;
+  margin-bottom: 10px;
+}
+.comments-cnt{
+  margin-top: 20px;
+}
+.comment-item{
+  margin-top: 15px;
+}
+.comment-item-head{
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+.comment-username {
+  margin: 0 10px;
+  text-decoration: none;
+}
+.comment-delete-content{
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.comment-delete{
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+  background-color: rgba(115,50,68,0.9);
+}
 // カテゴリー
 .category-head{
   font-size: 20px;
@@ -131,21 +178,22 @@
 
 // 投稿新規、編集
 
-.question-post-page{
+.page-padding{
   padding: 50px 0;
   color: #2E4159;
 }
-.question-post-contents{
+.post-contents-box{
   width: 60%;
   background-color: #fff;
   margin: 0 auto;
   padding: 30px;
   box-shadow: 2px 2px 4px rgba( 0, 0, 0, 0.3);
 }
-.question-post-head{
+.post-contents-head{
   font-size: 24px;
   border-bottom: 1px solid rgba(115,50,68,0.9);
   margin-bottom: 10px;
+  text-align: center;
 }
 .error-massage{
   color: red;

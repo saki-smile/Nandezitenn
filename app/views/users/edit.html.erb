@@ -1,12 +1,9 @@
-<div class="profile-edit-page">
-  <div class="profile-edit-contents">
-    <h2 class="question-post-head">プロフィール編集</h2>
+<div class="page-padding">
+  <div class="post-contents-box">
+    <h2 class="post-contents-head">プロフィール編集</h2>
     <div class="question-post-fields">
-      <% if @user.errors.any? %>
-        <% @user.errors.full_messages.each do |message| %>
-          <p class="error-massage"><%= message %></p>
-        <% end %>
-      <% end %>
+      <!--エラーメッセージ-->
+      <%= render 'layouts/error', obj: @user %>
       <%= form_with model: @user, local:true do |f| %>
         <div class="field">
           <p class="question-field-p"><%= f.label :name %></p>
